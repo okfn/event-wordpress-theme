@@ -2,7 +2,7 @@
 			
 				<div id="inner-footer" class="clearfix">
 		          <hr />
-		          <div id="widget-footer" class="clearfix row-fluid">
+		          <div id="widget-footer" class="clearfix row">
 		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer1') ) : ?>
 		            <?php endif; ?>
 		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer2') ) : ?>
@@ -14,10 +14,6 @@
 					<nav class="clearfix">
 						<?php bones_footer_links(); // Adjust using Menus in Wordpress Admin ?>
 					</nav>
-					
-					<p class="pull-right"><a href="http://320press.com" id="credit320" title="By the dudes of 320press">320press</a></p>
-			
-					<p class="attribution">&copy; <?php bloginfo('name'); ?></p>
 				
 				</div> <!-- end #inner-footer -->
 				
@@ -31,7 +27,38 @@
 		<![endif]-->
 		
 		<?php wp_footer(); // js scripts are inserted using this function ?>
+    <!-- OKF Ribbon -->
+		<script language="javascript" src="http://assets.okfn.org/themes/okfn/okf-panel.js" type="text/javascript"></script>
+		<!-- Tweet -->
+		<script language="javascript" src="<?php echo get_template_directory_uri(); ?>/library/js/jquery.tweet.js" type="text/javascript"></script>
+		<script type='text/javascript'>
+		jQuery(function($){
+				$("#ticker").tweet({
+					query: "#<?php echo of_get_option('site_hashtag') ?>",
+					page: 1,
+					avatar_size: 32,
+					count: 20,
+					loading_text: ""
+				}).bind("loaded", function() {
+					var ul = $(this).find(".tweet_list");
+					var ticker = function() {
+						setTimeout(function() {
+							ul.find('li:first').animate( {marginTop: '-4em'}, 500, function() {
+							$(this).detach().appendTo(ul).removeAttr('style');
+							});
+							ticker();
+						}, 6000);
+						};
+						ticker();
+						});
+					}); 
+		</script>
+    
+    <!-- Image Placeholder -->
+    <script src="<?php echo get_template_directory_uri(); ?>/library/js/holder.js"></script>
+    
+    <!-- Dot Dot Dot -->
+		<script src="<?php echo get_template_directory_uri(); ?>/library/js/jquery.dotdotdot-1.5.6-packed.js"></script>
 
 	</body>
-
 </html>

@@ -77,20 +77,26 @@ function optionsframework_options() {
 		
 	$options = array();
 		
-	$options[] = array( "name" => "Typography",
+	$options[] = array( "name" => "Appearance",
 						"type" => "heading");
 						
-	$options[] = array( "name" => "Headings",
-						"desc" => "Used in H1, H2, H3, H4, H5 & H6 tags.",
-						"id" => "heading_typography",
+	$options[] = array( "name" => "Logo",
+						"desc" => "Image URL",
+						"id" => "site_logo",
 						"std" => "",
-						"type" => "wpbs_typography");
+						"type" => "text");
 						
-	$options[] = array( "name" => "Main Body Text",
-						"desc" => "Used in P tags.",
-						"id" => "main_body_typography",
-						"std" => "",
-						"type" => "wpbs_typography");
+//	$options[] = array( "name" => "Headings",
+//						"desc" => "Used in H1, H2, H3, H4, H5 & H6 tags.",
+//						"id" => "heading_typography",
+//						"std" => "",
+//						"type" => "wpbs_typography");
+//						
+//	$options[] = array( "name" => "Main Body Text",
+//						"desc" => "Used in P tags.",
+//						"id" => "main_body_typography",
+//						"std" => "",
+//						"type" => "wpbs_typography");
 						
 	$options[] = array( "name" => "Link Color",
 						"desc" => "Default used if no color is selected.",
@@ -110,59 +116,81 @@ function optionsframework_options() {
 						"std" => "",
 						"type" => "color");
 						
-	$options[] = array( "name" => "Top Nav",
+	$options[] = array( "name" => "Content",
 						"type" => "heading");
 						
-	$options[] = array( "name" => "Position",
-						"desc" => "Fixed to the top of the window or scroll with content.",
-						"id" => "nav_position",
-						"std" => "",
-						"type" => "select",
-						"class" => "mini", //mini, tiny, small
-						"options" => $fixed_scroll);
-						
-	$options[] = array( "name" => "Top nav background color",
-						"desc" => "Default used if no color is selected.",
-						"id" => "top_nav_bg_color",
-						"std" => "",
-						"type" => "color");
-						
-	$options[] = array( "name" => "Check to use a gradient for top nav background",
-						"desc" => "Use gradient",
-						"id" => "showhidden_gradient",
-						"std" => "",
-						"type" => "checkbox");
+	$options[] = array( "name" => "Strapline",
+					  "desc" => "eg. Geneva 2013",
+					  "id" => "site_strapline",
+					  "std" => "",
+					  "type" => "text");
 	
-	$options[] = array( "name" => "Bottom gradient color",
-						"desc" => "Top nav background color used as top gradient color.",
-						"id" => "top_nav_bottom_gradient_color",
-						"std" => "",
-						"class" => "hidden",
-						"type" => "color");
+	$options[] = array( "name" => "Date",
+					  "desc" => "eg. 17th-19th September",
+					  "id" => "site_date",
+					  "std" => "",
+					  "type" => "text");
 						
-	$options[] = array( "name" => "Top nav item color",
-						"desc" => "Link color.",
-						"id" => "top_nav_link_color",
-						"std" => "",
-						"type" => "color");
+	$options[] = array( "name" => "Hashtag",
+					  "desc" => "eg. okfest",
+					  "id" => "site_hashtag",
+					  "std" => "",
+					  "type" => "text");
+					
+	$options[] = array( "name" => "Tweets",
+						"desc" => "Show tweets conatining hashtag",
+						"id" => "hashtag_tweets",
+						"std" => "1",
+						"type" => "checkbox");
 						
-	$options[] = array( "name" => "Top nav item hover color",
-						"desc" => "Link hover color.",
-						"id" => "top_nav_link_hover_color",
-						"std" => "",
-						"type" => "color");
+	$options[] = array( "name" => "OKF Ribbon",
+						"desc" => "Link to Open Knowledge Foundation",
+						"id" => "okf_ribbon",
+						"std" => "1",
+						"type" => "checkbox");
 						
-	$options[] = array( "name" => "Top nav dropdown item color",
-						"desc" => "Dropdown item color.",
-						"id" => "top_nav_dropdown_item",
-						"std" => "",
-						"type" => "color");
-						
-	$options[] = array( "name" => "Top nav dropdown item hover bg color",
-						"desc" => "Background of dropdown item hover color.",
-						"id" => "top_nav_dropdown_hover_bg",
-						"std" => "",
-						"type" => "color");
+//	$options[] = array( "name" => "Top nav background color",
+//						"desc" => "Default used if no color is selected.",
+//						"id" => "top_nav_bg_color",
+//						"std" => "",
+//						"type" => "color");
+//						
+//	$options[] = array( "name" => "Check to use a gradient for top nav background",
+//						"desc" => "Use gradient",
+//						"id" => "showhidden_gradient",
+//						"std" => "",
+//						"type" => "checkbox");
+//	
+//	$options[] = array( "name" => "Bottom gradient color",
+//						"desc" => "Top nav background color used as top gradient color.",
+//						"id" => "top_nav_bottom_gradient_color",
+//						"std" => "",
+//						"class" => "hidden",
+//						"type" => "color");
+//						
+//	$options[] = array( "name" => "Top nav item color",
+//						"desc" => "Link color.",
+//						"id" => "top_nav_link_color",
+//						"std" => "",
+//						"type" => "color");
+//						
+//	$options[] = array( "name" => "Top nav item hover color",
+//						"desc" => "Link hover color.",
+//						"id" => "top_nav_link_hover_color",
+//						"std" => "",
+//						"type" => "color");
+//						
+//	$options[] = array( "name" => "Top nav dropdown item color",
+//						"desc" => "Dropdown item color.",
+//						"id" => "top_nav_dropdown_item",
+//						"std" => "",
+//						"type" => "color");
+//						
+//	$options[] = array( "name" => "Top nav dropdown item hover bg color",
+//						"desc" => "Background of dropdown item hover color.",
+//						"id" => "top_nav_dropdown_hover_bg",
+//						"std" => "",
+//						"type" => "color");
 	
 	$options[] = array( "name" => "Search bar",
 						"desc" => "Show search bar in top nav",
@@ -170,44 +198,52 @@ function optionsframework_options() {
 						"std" => "",
 						"type" => "checkbox");
 						
-	$options[] = array( "name" => "Theme",
-						"type" => "heading");
+//	$options[] = array( "name" => "Theme",
+//						"type" => "heading");
+//						
+//	$options[] = array( "name" => "Bootswatch.com Themes",
+//						"desc" => "Use theme from bootswatch.com. Note: This may override other styles set in the theme options panel.",
+//						"id" => "showhidden_themes",
+//						"std" => "0",
+//						"type" => "checkbox");
+//						
+//	$options[] = array( "name" => "Select a theme",
+//						"id" => "wpbs_theme",
+//						"std" => "default",
+//						"class" => "hidden",
+//						"type" => "images",
+//						"options" => $theList
+//						);
+//						
+//	$options[] = array( "name" => "Refresh themes from Bootswatch",
+//						"type" => "themecheck",
+//						"id" => "themecheck"
+//						);
 						
-	$options[] = array( "name" => "Bootswatch.com Themes",
-						"desc" => "Use theme from bootswatch.com. Note: This may override other styles set in the theme options panel.",
-						"id" => "showhidden_themes",
-						"std" => "0",
-						"type" => "checkbox");
-						
-	$options[] = array( "name" => "Select a theme",
-						"id" => "wpbs_theme",
-						"std" => "default",
-						"class" => "hidden",
-						"type" => "images",
-						"options" => $theList
-						);
-						
-	$options[] = array( "name" => "Refresh themes from Bootswatch",
-						"type" => "themecheck",
-						"id" => "themecheck"
-						);
-						
-	$options[] = array( "name" => "Other Settings",
-						"type" => "heading");
+	$options[] = array( "name" => "Advanced",
+						"type" => "heading");		
+									
+	$options[] = array( "name" => "Header Position",
+						"desc" => "Fixed to the top of the window or scroll with content.",
+						"id" => "nav_position",
+						"std" => "",
+						"type" => "select",
+						"class" => "mini", //mini, tiny, small
+						"options" => $fixed_scroll);
 
 	$options[] = array( "name" => "Slider carousel on homepage",
 						"desc" => "Display the bootstrap slider carousel on homepage page template. This uses the wordpress featured images.",
 						"id" => "showhidden_slideroptions",
-						"std" => "0",
+						"std" => "1",
 						"type" => "checkbox");
-
+/*
 	$options[] = array( "name" => "Slider options",
 						"desc" => "Number of posts to show.",
 						"id" => "slider_options",
 						"class" => "mini hidden",
 						"std" => "5",
 						"type" => "text");
-						
+*/						
 	$options[] = array( "name" => "Homepage page template hero-unit background color",
 						"desc" => "Default used if no color is selected.",
 						"id" => "hero_unit_bg_color",

@@ -16,7 +16,7 @@ function gallery_shortcode_tbs($attr) {
 	$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
 	$attachments = get_posts($args);
 	if ($attachments) {
-		$output = '<div class="row-fluid"><ul class="thumbnails">';
+		$output = '<div class="row"><ul class="thumbnails">';
 		foreach ( $attachments as $attachment ) {
 			$output .= '<li class="span2">';
 			$att_title = apply_filters( 'the_title' , $attachment->post_title );
@@ -129,6 +129,121 @@ function blockquotes( $atts, $content = null ) {
 add_shortcode('blockquote', 'blockquotes'); 
  
 
+// Row
+function row_shortcode( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+			'class' => '',
+		), $atts ) );
+   
+	 $output = '<div class="row';
+	 if (!empty($class)) {
+		 $output .= ' '.$class.'';
+	 }
+	 $output .= '">' .do_shortcode($content). '</div>';
+	 
+	 return $output;
+} 
+add_shortcode( 'row', 'row_shortcode' );
 
+
+// Speakers
+function speakers_shortcode( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+			'class' => '',
+		), $atts ) );
+   
+	 $output = '<ul class="speakers thumbnails';
+	 if (!empty($class)) {
+		 $output .= ' '.$class.'';
+	 }
+	 $output .= '">' .do_shortcode($content). '</ul>';
+	 
+	 return $output;
+} 
+add_shortcode( 'speakers', 'speakers_shortcode' );
+
+function speaker_shortcode( $atts, $content = null ) {  
+	extract( shortcode_atts( array(
+			'image' => '',
+			'holder' => 'image coming soon',
+			'name' => '',
+			'featured' => '',
+			'link' => '',
+		), $atts ) );
+		
+		$output = '<li class="speaker span';
+		if($featured == 'y') {
+			$output .= '4 featured">';
+			}
+			else {
+				$output .= '3">';
+			}
+		if (!empty($link)) {
+			$output .= '<a href="' .$link. '" class="thumbnail">';
+		}
+		else {
+			$output .= '<div class="thumbnail">';
+		}
+		$output .= '<span class="image"><img data-src="'.get_template_directory_uri() . '/library/js/holder.js/940x581/auto/text:' .$holder. '" src="' .$image. '" alt="' .$name. '"></span>';
+		$output .= '<h6>' .$name. '</h6>';
+		if (!empty($link)) {
+			$output .= '</a>';
+		}
+		else {
+			$output .= '</div>';
+		}
+		if($featured == 'y') {
+			$output .= '<div class="blurb">'.$content.'</div>';
+		}
+		$output .= '</li>';
+		
+		return $output;
+}  
+add_shortcode('speaker', 'speaker_shortcode');  
+
+
+// Schedule
+function schedule_shortcode( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+			'day' => '',
+			'class' => '',
+		), $atts ) );
+   
+	 $output = '<div class="schedule';
+	 if (!empty($class)) {
+		 $output .= ' '.$class.'';
+	 }
+	 $output .= '"><h3 class="schedule-day">'.$day.'</h3><table class="table">' .do_shortcode($content). '</table></div>';
+	 
+	 return $output;
+} 
+add_shortcode( 'schedule', 'schedule_shortcode' );
+
+function slot_shortcode( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+			'time' => '',
+		), $atts ) );
+   
+	 $output = '<tr><th scope="row">'.$time.'</th>' .do_shortcode($content). '</tr>';
+	 
+	 return $output;
+} 
+add_shortcode( 'slot', 'slot_shortcode' );
+
+function session_shortcode( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+			'title' => '',
+			'location' => '',
+		), $atts ) );
+   
+	 $output = '<td class="slot"><h4 class="title">'.$title.'</h4>' .do_shortcode($content);
+	 if (!empty($location)) {
+		 $output .= '<span class="location">'.$location.'</span>';
+	 }
+	 $output .= '</td>';
+	 
+	 return $output;
+} 
+add_shortcode( 'session', 'session_shortcode' );
 
 ?>

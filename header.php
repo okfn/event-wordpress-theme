@@ -88,16 +88,28 @@
 	</head>
 	
 	<body <?php body_class(); ?>>
-				
+		<?php if(of_get_option('okf_ribbon', '1')) {?>
+      <div class="fixed-okf-panel visible-desktop">
+        <div id="okf-panel" class="collapse">
+          <iframe src="http://assets.okfn.org/themes/okfn/okf-panel.html" scrolling="no"></iframe>
+        </div>
+        <div class="container">
+          <div class="okfn-ribbon">
+            <a href="http://okfn.org/" data-toggle="collapse" data-target="#okf-panel" title="Part of the Open Knowledge Foundation Network">An Open Knowledge Foundation Site</a>
+          </div>
+        </div>
+      </div>
+		<?php } ?>
+    	
 		<header role="banner">
 		
 			<div id="inner-header" class="clearfix">
 				
 				<div class="navbar navbar-fixed-top">
 					<div class="navbar-inner">
-						<div class="container-fluid nav-container">
+						<div class="container nav-container">
 							<nav role="navigation">
-								<a class="brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+								<a class="brand" id="logo" title="<?php bloginfo('name'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?><small><?php echo get_bloginfo('description'); ?></small></a>
 								
 								<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 							        <span class="icon-bar"></span>
@@ -105,6 +117,22 @@
 							        <span class="icon-bar"></span>
 								</a>
 								
+                <?php if (of_get_option('site_strapline') or of_get_option('site_date')) {?>
+                <ul class="details">
+                  <?php if (of_get_option('site_strapline')) {?><li class="strapline"><?php echo of_get_option('site_strapline') ?></li><?php } ?>
+                  <?php if (of_get_option('site_date')) {?><li class="date"><?php echo of_get_option('site_date') ?></li><?php } ?>
+                </ul>
+                <?php } ?>
+                
+                <?php if(of_get_option('hashtag_tweets', '1')) {?>
+                  <div class="twitter-ticker visible-desktop">
+                  <?php if(of_get_option('site_hashtag')) {?>
+                    <a href="https://twitter.com/#!/search/%23<?php echo of_get_option('site_hashtag') ?>" class="hash-link">#<?php echo of_get_option('site_hashtag') ?></a>
+                    <div id="ticker"></div>
+                  <?php } ?>
+                  </div>
+                <?php } ?>
+                
 								<div class="nav-collapse">
 									<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
 								</div>
@@ -125,4 +153,4 @@
 		
 		</header> <!-- end header -->
 		
-		<div class="container-fluid">
+		<div class="container">

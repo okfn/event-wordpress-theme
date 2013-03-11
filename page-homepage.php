@@ -6,11 +6,58 @@ Template Name: Homepage
 
 <?php get_header(); ?>
 			
-			<div id="content" class="clearfix row-fluid">
+			<div id="content" class="clearfix row">
 			
 				<div id="main" class="span12 clearfix" role="main">
 
-					<?php
+			
+<?php $use_carousel = of_get_option('showhidden_slideroptions');
+      if ($use_carousel) {
+  
+			$args = array(  
+					'numberposts' => -1, // Using -1 loads all posts  
+					'orderby' => 'menu_order', // This ensures images are in the order set in the page media manager  
+					'order'=> 'ASC',  
+					'post_mime_type' => 'image', // Make sure it doesn't pull other resources, like videos  
+					'post_parent' => $post->ID, // Important part - ensures the associated images are loaded 
+					'post_status' => null, 
+					'post_type' => 'attachment'  
+			);  
+				
+			$images = get_children( $args );  
+			
+			if($images){
+			$item_num = 0;
+			 ?>  
+					<div id="homeCarousel" class="carousel slide carousel-fade">
+						<!-- Carousel items -->
+						<div class="carousel-inner">
+							<?php foreach($images as $image){ 
+							$item_num += 1;
+							?>
+							<div class="item<?php if($item_num == 1){ echo ' active'; } ?>">
+								<img src="<?php echo $image->guid; ?>" alt="<?php echo $image->post_title; ?>" title="<?php echo $image->post_title; ?>" /> 
+								<div class="carousel-caption">
+									<?php echo $image->post_excerpt; ?>
+								</div>
+							</div>
+							<?php    } ?> 
+						</div>
+					</div>
+			<?php } ?>  
+<? } else { ?>
+	<div class="hero-unit" style="background-image: url('<?php echo $featured_src; ?>'); background-repeat: no-repeat; background-position: 0 0;">
+
+								<?php the_post_thumbnail( 'wpbs-featured-home' ); ?>
+
+								<h1><?php the_title(); ?></h1>
+								
+								<?php echo get_post_meta($post->ID, 'custom_tagline' , true);?>
+							
+							</div>
+<? } ?>
+					
+					<?php /*
 
 					$use_carousel = of_get_option('showhidden_slideroptions');
       				if ($use_carousel) {
@@ -66,41 +113,21 @@ Template Name: Homepage
 					    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 				    </div>
 
-				    <?php } // ends the if use carousel statement ?>
+				    <?php } // ends the if use carousel statement */ ?>
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-					
-						<header>
-
-							<?php 
-								$post_thumbnail_id = get_post_thumbnail_id();
-								$featured_src = wp_get_attachment_image_src( $post_thumbnail_id, 'wpbs-featured-home' ); 
-								// not sure why this isn't working yet
-							?>
 						
-							<div class="hero-unit" style="background-image: url('<?php echo $featured_src; ?>'); background-repeat: no-repeat; background-position: 0 0;">
-
-								<?php the_post_thumbnail( 'wpbs-featured-home' ); ?>
-
-								<h1><?php the_title(); ?></h1>
-								
-								<?php echo get_post_meta($post->ID, 'custom_tagline' , true);?>
-							
-							</div>
-
-						</header>
+						<section class="row post_content">
 						
-						<section class="row-fluid post_content">
-						
-							<div class="span8">
+							<div class="span12">
 						
 								<?php the_content(); ?>
 								
 							</div>
 							
-							<?php get_sidebar('sidebar2'); // sidebar 2 ?>
+							<?php //get_sidebar('sidebar2'); // sidebar 2 ?>
 													
 						</section> <!-- end article header -->
 						
@@ -140,4 +167,9 @@ Template Name: Homepage
     
 			</div> <!-- end #content -->
 
+<script>
+    $('#homeCarousel').carousel({
+    interval: 3000
+    })
+</script>
 <?php get_footer(); ?>

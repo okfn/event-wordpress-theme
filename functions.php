@@ -24,7 +24,7 @@ require_once('library/shortcodes.php');
 // Custom Backend Footer
 add_filter('admin_footer_text', 'bones_custom_admin_footer');
 function bones_custom_admin_footer() {
-	echo '<span id="footer-thankyou">Developed by <a href="http://320press.com" target="_blank">320press</a></span>. Built using <a href="http://themble.com/bones" target="_blank">Bones</a>.';
+	echo '<span id="footer-thankyou">Theme by <a href="http://www.mintcanary.com/" target="_blank">Mint Canary</a></span>. Built using <a href="http://320press.com" target="_blank">WordPress Bootstrap</a>.';
 }
 
 // adding it to the admin area
@@ -138,7 +138,7 @@ function bones_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
 	<li <?php comment_class(); ?>>
 		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
-			<div class="comment-author vcard row-fluid clearfix">
+			<div class="comment-author vcard row clearfix">
 				<div class="avatar span2">
 					<?php echo get_avatar($comment,$size='75',$default='<path_to_url>' ); ?>
 				</div>
@@ -374,6 +374,7 @@ function add_class_attachment_link($html){
 }
 add_filter('wp_get_attachment_link','add_class_attachment_link',10,1);
 
+/*
 // Add lead class to first paragraph
 function first_paragraph($content){
     global $post;
@@ -385,6 +386,7 @@ function first_paragraph($content){
         return preg_replace('/<p([^>]+)?>/', '<p$1 class="lead">', $content, 1);
 }
 add_filter('the_content', 'first_paragraph');
+*/
 
 // Menu output mods
 class description_walker extends Walker_Nav_Menu
@@ -523,26 +525,42 @@ add_action('wp_enqueue_scripts', 'theme_js');
 // Get theme options
 function get_wpbs_theme_options(){
   $theme_options_styles = '';
-    
-      $heading_typography = of_get_option('heading_typography');
-      if ( $heading_typography['face'] != 'Default' ) {
-        $theme_options_styles .= '
-        h1, h2, h3, h4, h5, h6{ 
-          font-family: ' . $heading_typography['face'] . '; 
-          font-weight: ' . $heading_typography['style'] . '; 
-          color: ' . $heading_typography['color'] . '; 
-        }';
-      }
       
-      $main_body_typography = of_get_option('main_body_typography');
-      if ( $main_body_typography['face'] != 'Default' ) {
+			$site_logo = of_get_option('site_logo');
+      if ( $site_logo ) {
         $theme_options_styles .= '
-        body{ 
-          font-family: ' . $main_body_typography['face'] . '; 
-          font-weight: ' . $main_body_typography['style'] . '; 
-          color: ' . $main_body_typography['color'] . '; 
+        header .navbar .brand {
+					background-image:url("'.$site_logo.'");
+					background-position: 0px center;
+					background-repeat: no-repeat;
+					background-size: 220px auto;
+					overflow: hidden;
+					text-indent: -9999px;
+					width: 220px;
+					height:75px;
+					padding-top:10px;
         }';
       }
+			
+      //$heading_typography = of_get_option('heading_typography');
+      //if ( $heading_typography['face'] != 'Default' ) {
+      //  $theme_options_styles .= '
+      //  h1, h2, h3, h4, h5, h6{ 
+      //    font-family: ' . $heading_typography['face'] . '; 
+      //    font-weight: ' . $heading_typography['style'] . '; 
+      //    color: ' . $heading_typography['color'] . '; 
+      //  }';
+      //}
+      
+      //$main_body_typography = of_get_option('main_body_typography');
+      //if ( $main_body_typography['face'] != 'Default' ) {
+      //  $theme_options_styles .= '
+      //  body{ 
+      //    font-family: ' . $main_body_typography['face'] . '; 
+      //    font-weight: ' . $main_body_typography['style'] . '; 
+      //    color: ' . $main_body_typography['color'] . '; 
+      //  }';
+      //}
       
       $link_color = of_get_option('link_color');
       if ($link_color) {
@@ -577,78 +595,101 @@ function get_wpbs_theme_options(){
         body{
           padding-top: 0;
         }
+				.navbar-fixed-top .navbar-inner {
+					-webkit-box-shadow: none;
+					box-shadow: none; 
+				}
         ' 
         ;
       }
-      
-      $topbar_bg_color = of_get_option('top_nav_bg_color');
-      if ( $topbar_bg_color ) {
+			
+			$hashtag_tweets = of_get_option('hashtag_tweets');
+      if ($hashtag_tweets){
         $theme_options_styles .= '
-        .navbar-inner, .navbar .fill { 
-          background-color: '. $topbar_bg_color . ';
-        }' . $topbar_bg_color;
+				.navbar .nav {
+					margin-top:0px;
+				}';
+      }
+			
+			$okf_ribbon = of_get_option('okf_ribbon');
+      if ($okf_ribbon){
+        $theme_options_styles .= '
+        @media only screen and (min-width: 980px) {
+					.navbar .nav,
+					header .navbar .twitter-ticker {
+						margin-right:60px;
+					}
+				}';
       }
       
-      $use_gradient = of_get_option('showhidden_gradient');
-      if ($use_gradient) {
-        $topbar_bottom_gradient_color = of_get_option('top_nav_bottom_gradient_color');
+      //$topbar_bg_color = of_get_option('top_nav_bg_color');
+      //if ( $topbar_bg_color ) {
+      //  $theme_options_styles .= '
+      //  .navbar-inner, .navbar .fill { 
+      //    background-color: '. $topbar_bg_color . ';
+      //  }' . $topbar_bg_color;
+      //}
       
-        $theme_options_styles .= '
-        .navbar-inner, .navbar .fill {
-          background-image: -khtml-gradient(linear, left top, left bottom, from(' . $topbar_bg_color . '), to('. $topbar_bottom_gradient_color . '));
-          background-image: -moz-linear-gradient(top, ' . $topbar_bg_color . ', '. $topbar_bottom_gradient_color . ');
-          background-image: -ms-linear-gradient(top, ' . $topbar_bg_color . ', '. $topbar_bottom_gradient_color . ');
-          background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, ' . $topbar_bg_color . '), color-stop(100%, '. $topbar_bottom_gradient_color . '));
-          background-image: -webkit-linear-gradient(top, ' . $topbar_bg_color . ', '. $topbar_bottom_gradient_color . '2);
-          background-image: -o-linear-gradient(top, ' . $topbar_bg_color . ', '. $topbar_bottom_gradient_color . ');
-          background-image: linear-gradient(top, ' . $topbar_bg_color . ', '. $topbar_bottom_gradient_color . ');
-          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=\'' . $topbar_bg_color . '\', endColorstr=\''. $topbar_bottom_gradient_color . '2\', GradientType=0);
-        }';
-      }
-      else{
-      } 
+      //$use_gradient = of_get_option('showhidden_gradient');
+      //if ($use_gradient) {
+      //  $topbar_bottom_gradient_color = of_get_option('top_nav_bottom_gradient_color');
+      //
+      //  $theme_options_styles .= '
+      //  .navbar-inner, .navbar .fill {
+      //    background-image: -khtml-gradient(linear, left top, left bottom, from(' . $topbar_bg_color . '), to('. $topbar_bottom_gradient_color . '));
+      //    background-image: -moz-linear-gradient(top, ' . $topbar_bg_color . ', '. $topbar_bottom_gradient_color . ');
+      //    background-image: -ms-linear-gradient(top, ' . $topbar_bg_color . ', '. $topbar_bottom_gradient_color . ');
+      //   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, ' . $topbar_bg_color . '), color-stop(100%, '. $topbar_bottom_gradient_color . '));
+      //    background-image: -webkit-linear-gradient(top, ' . $topbar_bg_color . ', '. $topbar_bottom_gradient_color . '2);
+      //    background-image: -o-linear-gradient(top, ' . $topbar_bg_color . ', '. $topbar_bottom_gradient_color . ');
+      //    background-image: linear-gradient(top, ' . $topbar_bg_color . ', '. $topbar_bottom_gradient_color . ');
+      //    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=\'' . $topbar_bg_color . '\', endColorstr=\''. $topbar_bottom_gradient_color . '2\', GradientType=0);
+      //  }';
+      //}
+      //else{
+      //} 
       
-      $topbar_link_color = of_get_option('top_nav_link_color');
-      if ($topbar_link_color) {
-        $theme_options_styles .= '
-        .navbar .nav li a { 
-          color: '. $topbar_link_color . ';
-        }';
-      }
+      //$topbar_link_color = of_get_option('top_nav_link_color');
+      //if ($topbar_link_color) {
+      //  $theme_options_styles .= '
+      //  .navbar .nav li a { 
+      //    color: '. $topbar_link_color . ';
+      //  }';
+      //}
       
-      $topbar_link_hover_color = of_get_option('top_nav_link_hover_color');
-      if ($topbar_link_hover_color) {
-        $theme_options_styles .= '
-        .navbar .nav li a:hover { 
-          color: '. $topbar_link_hover_color . ';
-        }';
-      }
+      //$topbar_link_hover_color = of_get_option('top_nav_link_hover_color');
+      //if ($topbar_link_hover_color) {
+      //  $theme_options_styles .= '
+      //  .navbar .nav li a:hover { 
+      //    color: '. $topbar_link_hover_color . ';
+      //  }';
+      //}
       
-      $topbar_dropdown_hover_bg_color = of_get_option('top_nav_dropdown_hover_bg');
-      if ($topbar_dropdown_hover_bg_color) {
-        $theme_options_styles .= '
-          .dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
-            background-color: ' . $topbar_dropdown_hover_bg_color . ';
-          }
-        ';
-      }
+      //$topbar_dropdown_hover_bg_color = of_get_option('top_nav_dropdown_hover_bg');
+      //if ($topbar_dropdown_hover_bg_color) {
+      //  $theme_options_styles .= '
+      //    .dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
+      //      background-color: ' . $topbar_dropdown_hover_bg_color . ';
+      //    }
+      //  ';
+      //}
       
-      $topbar_dropdown_item_color = of_get_option('top_nav_dropdown_item');
-      if ($topbar_dropdown_item_color){
-        $theme_options_styles .= '
-          .dropdown-menu a{
-            color: ' . $topbar_dropdown_item_color . ' !important;
-          }
-        ';
-      }
+      //$topbar_dropdown_item_color = of_get_option('top_nav_dropdown_item');
+      //if ($topbar_dropdown_item_color){
+      //  $theme_options_styles .= '
+      //    .dropdown-menu a{
+      //      color: ' . $topbar_dropdown_item_color . ' !important;
+      //    }
+      //  ';
+      //}
       
-      $hero_unit_bg_color = of_get_option('hero_unit_bg_color');
-      if ($hero_unit_bg_color) {
-        $theme_options_styles .= '
-        .hero-unit { 
-          background-color: '. $hero_unit_bg_color . ';
-        }';
-      }
+      //$hero_unit_bg_color = of_get_option('hero_unit_bg_color');
+      //if ($hero_unit_bg_color) {
+      //  $theme_options_styles .= '
+      //  .hero-unit { 
+      //    background-color: '. $hero_unit_bg_color . ';
+      //  }';
+      //}
       
       $suppress_comments_message = of_get_option('suppress_comments_message');
       if ($suppress_comments_message){
@@ -663,12 +704,19 @@ function get_wpbs_theme_options(){
         $theme_options_styles .= $additional_css;
       }
           
+      
+			echo '<style>
+			#wpadminbar {display:none;}
+      html { margin-top: 0px !important; }
+      * html body { margin-top: 0px !important; }
+		  body.admin-bar .navbar-fixed-top {top: 0px;}';
       if($theme_options_styles){
-        echo '<style>' 
+        echo '' 
         . $theme_options_styles . '
-        </style>';
+        ';
       }
-    
+      echo '</style>';
+			
       $bootstrap_theme = of_get_option('wpbs_theme');
       $use_theme = of_get_option('showhidden_themes');
       

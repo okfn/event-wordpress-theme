@@ -1,0 +1,340 @@
+/* Colours */
+/* Fonts */
+body {
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  color: #5E5E5E;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #1d1d1d;
+}
+h2 {
+  font-size: 28px;
+}
+#main h1,
+#main h2 {
+  display: inline-block;
+}
+#main h1:after,
+#main h2:after {
+  content: ' ';
+  background-color: #1d1d1d;
+  display: block;
+  height: 4px;
+  min-width: 220px;
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+}
+#main h6 {
+  text-transform: uppercase;
+  font-size: 15px;
+}
+header .navbar-fixed-top .navbar-inner,
+header .navbar-static-top .navbar-inner {
+  border-width: 0;
+  background-image: none;
+  background-color: #FFF;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-transition: -webkit-box-shadow 0.5s ease-in-out;
+  -moz-transition: box-shadow 0.5s ease-in-out;
+  -o-transition: box-shadow 0.5s ease-in-out;
+  -ms-transition: box-shadow 0.5s ease-in-out;
+  transition: box-shadow 0.5s ease-in-out;
+}
+body.top header .navbar-fixed-top .navbar-inner,
+header .navbar-static-top .navbar-inner {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+header .navbar .brand {
+  display: block;
+  height: 50px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 25px;
+}
+header .navbar .brand small {
+  display: block;
+}
+header .navbar .details {
+  float: left;
+  margin: 0 0 0 10px;
+  padding-top: 23px;
+  border-bottom: solid 4px #1d1d1d;
+  font-size: 17px;
+  font-style: italic;
+}
+header .navbar .details li {
+  display: block;
+  color: #1d1d1d;
+  padding-bottom: 5px;
+}
+header .navbar .details li.strapline {
+  font-size: 20px;
+  color: #ababab;
+  padding-bottom: 0px;
+}
+header .navbar .tweets {
+  display: none;
+  text-align: right;
+  height: 30px;
+  margin-top: 14px;
+  float: right;
+}
+.fixed-okf-panel .okfn-ribbon {
+  position: relative;
+  right: -2px;
+  height: 1px;
+}
+.fixed-okf-panel .okfn-ribbon a {
+  background-position: center -220px;
+  height: 80px;
+  opacity: 0.4;
+  -webkit-transition: opacity 0.5s linear;
+  -moz-transition: opacity 0.5s linear;
+  -o-transition: opacity 0.5s linear;
+  -ms-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
+.fixed-okf-panel .okfn-ribbon a:hover,
+.fixed-okf-panel .okfn-ribbon.active a {
+  opacity: 1.0;
+  -webkit-transition: opacity 0s linear;
+  -moz-transition: opacity 0s linear;
+  -o-transition: opacity 0s linear;
+  -ms-transition: opacity 0s linear;
+  transition: opacity 0s linear;
+}
+#okf-panel {
+  border-color: #393939;
+}
+/* Tweet */
+.tweet_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+  height: 40px;
+}
+.tweet_list li {
+  overflow: hidden;
+  list-style-type: none;
+}
+.tweet_list .tweet_avatar,
+.tweet_list li .tweet_time {
+  display: none;
+}
+.tweet_list li .tweet_text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 40px;
+  line-height: 40px;
+  display: block;
+  font-size: 12px;
+}
+.twitter-ticker {
+  max-width: 460px;
+  float: right;
+  margin-top: 3px;
+}
+.twitter-ticker a {
+  color: #1d1d1d;
+}
+.twitter-ticker .hash-link {
+  float: right;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 10px;
+  font-style: italic;
+}
+#content {
+  padding: 0;
+}
+#content .post_content section {
+  border-bottom: solid 4px #1d1d1d;
+  margin-bottom: 15px;
+}
+.thumbnail,
+a.thumbnail:hover {
+  border: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  padding: 0px;
+}
+.thumbnails > li {
+  margin-bottom: 40px;
+}
+/* Tables */
+.table th,
+.table td {
+  border-top: 4px solid #ededed;
+}
+.table th {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #1d1d1d;
+}
+.table-condensed th,
+.table-condensed td {
+  border-top-width: 1px;
+}
+.carousel.carousel-fade .item {
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.carousel.carousel-fade .active.left {
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+}
+.carousel.carousel-fade .next {
+  left: 0;
+  opacity: 1;
+  z-index: 1;
+}
+.carousel-caption {
+  background-color: transparent;
+  color: #FFF;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-shadow: 1px 1px 0px #000000;
+  filter: dropshadow(color=#000000, offx=1, offy=1);
+}
+/* Speakers Shortcode */
+.speakers {
+  margin-bottom: 0;
+}
+.speakers .image {
+  display: block;
+}
+.speakers h6 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.speakers .blurb {
+  height: 140px;
+  overflow: hidden;
+}
+/* Schedule Shortcode */
+.schedule .schedule-day {
+  text-transform: uppercase;
+  font-size: 18px;
+  margin: 0;
+}
+.schedule th {
+  width: 60px;
+  padding-top: 15px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.schedule td.slot {
+  padding-top: 15px;
+  padding-left: 20px;
+  padding-right: 0;
+}
+.schedule td.slot h4.title {
+  margin-top: 0;
+  margin-bottom: 3px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.schedule .location {
+  display: block;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #1d1d1d;
+  font-weight: 600;
+  font-size: 13px;
+  padding-left: 18px;
+  margin: 5px 0px;
+  background-image: url(../images/icons/marker.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+@media (min-width: 980px) {
+  body {
+    padding-top: 95px;
+  }
+  header .navbar .brand {
+    margin-left: 0px;
+  }
+  .navbar .nav {
+    float: right;
+    margin-top: 43px;
+    clear: right;
+  }
+  .navbar .nav > li > a {
+    padding: 0px 0px 5px 0px;
+    margin-left: 20px;
+    border-bottom: solid 4px #FFF;
+    font-size: 16px;
+  }
+  .navbar .nav > .active > a,
+  .navbar .nav > .active > a:hover,
+  .navbar .nav > .active > a:focus {
+    background-color: transparent;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-color: #1d1d1d;
+  }
+  header .navbar .tweets {
+    display: block;
+  }
+  .speaker .image {
+    height: 136px;
+    overflow: hidden;
+  }
+  .speaker.featured .image {
+    height: 185px;
+  }
+}
+@media (max-width: 979px) {
+  header .navbar .brand {
+    margin-left: 10px;
+  }
+}
+@media (max-width: 767px) {
+  #main h1,
+  #main h2,
+  #main h3,
+  #main h4,
+  #main h5,
+  #main h6 {
+    display: block;
+  }
+  header .navbar .nav {
+    padding-top: 10px;
+  }
+  header .navbar .details {
+    padding-top: 0px;
+    float: none;
+    clear: left;
+  }
+  .schedule table,
+  .schedule thead,
+  .schedule tbody,
+  .schedule th,
+  .schedule td,
+  .schedule tr {
+    display: block;
+  }
+  .schedule th {
+    border: none;
+  }
+  .schedule td.slot {
+    padding-left: 0px;
+  }
+}
