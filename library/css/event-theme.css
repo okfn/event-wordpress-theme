@@ -263,6 +263,9 @@ a.thumbnail:hover {
   background-repeat: no-repeat;
   background-position: left center;
 }
+.padding-bottom {
+  padding-bottom: 15px;
+}
 @media (min-width: 980px) {
   body {
     padding-top: 95px;
