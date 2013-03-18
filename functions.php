@@ -575,7 +575,13 @@ function get_wpbs_theme_options(){
         $theme_options_styles .= '
         a:hover{ 
           color: ' . $link_hover_color . '; 
-        }';
+        }
+				.dropdown-menu li > a:hover,
+				.dropdown-menu li > a:focus,
+				.dropdown-submenu:hover > a {
+  				background-color: '. $link_hover_color .';
+					background-image: none;
+				}';
       }
       
       $link_active_color = of_get_option('link_active_color');
