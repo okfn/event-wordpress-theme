@@ -131,18 +131,6 @@ function optionsframework_options() {
 					  "std" => "",
 					  "type" => "text");
 						
-	$options[] = array( "name" => "Hashtag",
-					  "desc" => "eg. okfest",
-					  "id" => "site_hashtag",
-					  "std" => "",
-					  "type" => "text");
-					
-	$options[] = array( "name" => "Tweets",
-						"desc" => "Show tweets conatining hashtag",
-						"id" => "hashtag_tweets",
-						"std" => "1",
-						"type" => "checkbox");
-						
 	$options[] = array( "name" => "OKF Ribbon",
 						"desc" => "Link to Open Knowledge Foundation",
 						"id" => "okf_ribbon",
@@ -220,6 +208,28 @@ function optionsframework_options() {
 //						"id" => "themecheck"
 //						);
 						
+	$options[] = array( "name" => "Social",
+						"type" => "heading");
+									
+	$options[] = array( "name" => "Hashtag",
+					  "desc" => "eg. okfest",
+					  "id" => "site_hashtag",
+					  "std" => "",
+					  "type" => "text");
+					
+	$options[] = array( "name" => "Tweets",
+						"desc" => "Show tweets conatining hashtag",
+						"id" => "hashtag_tweets",
+						"std" => "1",
+						"type" => "checkbox");
+						
+	$options[] = array( "name" => "Sharing",
+						"desc" => "Enable sharing",
+						"id" => "site_sharing",
+						"std" => "1",
+						"type" => "checkbox");
+						
+	
 	$options[] = array( "name" => "Advanced",
 						"type" => "heading");		
 									
