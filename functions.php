@@ -296,7 +296,7 @@ $prefix = 'custom_';
 $custom_meta_fields = array(  
     array(  
         'label'=> 'Homepage tagline area',  
-        'desc'  => 'Displayed underneath page title. Only used on homepage template. HTML can be used.',  
+        'desc'  => 'Displayed underneath page title, or over carousel images (replaces captions). HTML can be used.',  
         'id'    => $prefix.'tagline',  
         'type'  => 'textarea' 
     )  

@@ -28,8 +28,9 @@ Template Name: Homepage
 			
 			if($images){
 			$item_num = 0;
+			$homepageTagline = get_post_meta($post->ID, 'custom_tagline' , true)
 			 ?>  
-					<div id="homeCarousel" class="carousel slide carousel-fade">
+					<div id="homeCarousel" class="carousel<?php if (empty($homepageTagline)) { echo ' slide carousel-fade';} ?>">
 						<!-- Carousel items -->
 						<div class="carousel-inner">
 							<?php foreach($images as $image){ 
@@ -37,12 +38,15 @@ Template Name: Homepage
 							?>
 							<div class="item<?php if($item_num == 1){ echo ' active'; } ?>">
 								<img src="<?php echo $image->guid; ?>" alt="<?php echo $image->post_title; ?>" title="<?php echo $image->post_title; ?>" /> 
-								<div class="carousel-caption">
-									<?php echo $image->post_excerpt; ?>
-								</div>
+								<?php if (empty($homepageTagline)) { ?>
+                  <div class="carousel-caption">
+                    <?php echo $image->post_excerpt; ?>
+                  </div>
+                <? } ?>
 							</div>
 							<?php    } ?> 
 						</div>
+            <?php if (!empty($homepageTagline)) { echo '<div class="homepage-tagline">'.$homepageTagline.'</div>';} ?>
 					</div>
 			<?php } ?>  
 <? } else { ?>
