@@ -16,6 +16,10 @@ h6 {
 h2 {
   font-size: 28px;
 }
+p.highlight {
+  background-color: #000;
+  color: #FFF;
+}
 /* Buttons */
 .btn {
   -webkit-border-radius: 0px;
