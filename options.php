@@ -247,6 +247,12 @@ function optionsframework_options() {
 						"std" => "1",
 						"type" => "checkbox");
 						
+	$options[] = array( "name" => "Sharing on Home Page",
+						"desc" => "Also enable sharing in home page template",
+						"id" => "home_sharing",
+						"std" => "0",
+						"type" => "checkbox");
+						
 	
 	$options[] = array( "name" => "Advanced",
 						"type" => "heading");		
