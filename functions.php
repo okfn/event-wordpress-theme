@@ -616,13 +616,21 @@ function get_wpbs_theme_options(){
 					margin-top:0px;
 				}';
       }
+			$social_links = of_get_option('social_links');
+      if ($social_links){
+        $theme_options_styles .= '
+				.navbar .nav {
+					margin-top:0px;
+				}';
+      }
 			
 			$okf_ribbon = of_get_option('okf_ribbon');
       if ($okf_ribbon){
         $theme_options_styles .= '
         @media only screen and (min-width: 980px) {
 					.navbar .nav,
-					header .navbar .twitter-ticker {
+					header .navbar .twitter-ticker,
+					header .navbar .social-links {
 						margin-right:60px;
 					}
 				}';

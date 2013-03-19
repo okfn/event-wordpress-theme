@@ -124,13 +124,30 @@
                 </ul>
                 <?php } ?>
                 
-                <?php if(of_get_option('hashtag_tweets', '1')) {?>
+                <?php if(of_get_option('hashtag_tweets', '1') && !of_get_option('social_links', '1')) {?>
                   <div class="twitter-ticker visible-desktop">
                   <?php if(of_get_option('site_hashtag')) {?>
                     <a href="https://twitter.com/#!/search/%23<?php echo of_get_option('site_hashtag') ?>" class="hash-link">#<?php echo of_get_option('site_hashtag') ?></a>
                     <div id="ticker"></div>
                   <?php } ?>
                   </div>
+                <?php } ?>
+                
+                <?php if(of_get_option('social_links', '1')) {
+									$twitterUsername = of_get_option('social_link_twitter');
+									$facebookUsername = of_get_option('social_link_facebook');
+								 ?>
+                  <ul class="social-links visible-desktop">
+                    <?php if (!empty($facebookUsername)) { ?>
+                    <li class="facebook"><a href="https://www.facebook.com/<?php echo $facebookUsername; ?>">Facebook</a></li>
+                    <?php } ?>
+                    <?php if (!empty($twitterUsername)) { ?>
+                    <li class="twitter"><a href="https://twitter.com/<?php echo $twitterUsername; ?>">Twitter</a></li>
+                    <?php } ?>
+                    <?php if(of_get_option('site_hashtag')) {?>
+                    <li><a href="https://twitter.com/#!/search/%23<?php echo of_get_option('site_hashtag') ?>" class="hash-link">#<?php echo of_get_option('site_hashtag') ?></a></li>
+										<?php } ?>
+                  </ul>
                 <?php } ?>
                 
 								<div class="nav-collapse">

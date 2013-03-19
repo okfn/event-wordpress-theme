@@ -210,19 +210,37 @@ function optionsframework_options() {
 						
 	$options[] = array( "name" => "Social",
 						"type" => "heading");
-									
+												
+	$options[] = array( "name" => "Twitter Username",
+					  "desc" => "twitter.com/...",
+					  "id" => "social_link_twitter",
+					  "std" => "",
+					  "type" => "text");
+						
+	$options[] = array( "name" => "Facebook Username",
+					  "desc" => "facebook.com/...",
+					  "id" => "social_link_facebook",
+					  "std" => "",
+					  "type" => "text");
+																			
 	$options[] = array( "name" => "Hashtag",
 					  "desc" => "eg. okfest",
 					  "id" => "site_hashtag",
 					  "std" => "",
 					  "type" => "text");
-					
+						
 	$options[] = array( "name" => "Tweets",
 						"desc" => "Show tweets conatining hashtag",
 						"id" => "hashtag_tweets",
 						"std" => "1",
 						"type" => "checkbox");
 						
+	$options[] = array( "name" => "Social Links",
+						"desc" => "Show links to social profiles (replaces tweets)",
+						"id" => "social_links",
+						"std" => "0",
+						"type" => "checkbox");
+														
 	$options[] = array( "name" => "Sharing",
 						"desc" => "Enable sharing",
 						"id" => "site_sharing",
