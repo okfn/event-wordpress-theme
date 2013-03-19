@@ -68,12 +68,12 @@ h2 {
   background-image: -o-linear-gradient(top, #FFF, #FFF);
   background-image: linear-gradient(to bottom, #FFF, #FFF);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff444444', endColorstr='#ff222222', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#fff', GradientType=0);
   border-color: #FFF;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
   *background-color: #FFF;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	text-shadow: none;
 }
 .btn-inverse:hover,
 .btn-inverse:active,
@@ -83,10 +83,12 @@ h2 {
   color: #000;
   background-color: #FFF;
   *background-color: #FFF;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 }
 .btn-inverse:active,
 .btn-inverse.active {
   background-color: #FFF \9;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 }
 
 
