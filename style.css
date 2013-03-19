@@ -37,3 +37,7 @@ section > br,
 p:empty {
 	display:none;
 }
+
+iframe {
+	max-width:100%;
+}
