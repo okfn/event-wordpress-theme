@@ -21,6 +21,7 @@ h2 {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .btn-primary {
   color: #ffffff;
@@ -353,6 +354,7 @@ a.thumbnail:hover {
 @media (min-width: 768px) {
   .homepage-tagline {
     font-size: 32px;
+    padding: 30px;
   }
 }
 /* Speakers Shortcode */
