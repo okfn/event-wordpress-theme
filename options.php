@@ -98,20 +98,20 @@ function optionsframework_options() {
 //						"std" => "",
 //						"type" => "wpbs_typography");
 						
-	$options[] = array( "name" => "Accent / Link Color",
-						"desc" => "Default used if no color is selected.",
+	$options[] = array( "name" => "Accent / Link Colour",
+						"desc" => "Default used if no colour is selected.",
 						"id" => "link_color",
 						"std" => "",
 						"type" => "color");
 					
-	$options[] = array( "name" => "Link:hover Color",
-						"desc" => "Default used if no color is selected.",
+	$options[] = array( "name" => "Link:hover Colour",
+						"desc" => "Default used if no colour is selected.",
 						"id" => "link_hover_color",
 						"std" => "",
 						"type" => "color");
 						
-	$options[] = array( "name" => "Link:active Color",
-						"desc" => "Default used if no color is selected.",
+	$options[] = array( "name" => "Link:active Colour",
+						"desc" => "Default used if no colour is selected.",
 						"id" => "link_active_color",
 						"std" => "",
 						"type" => "color");
@@ -278,8 +278,8 @@ function optionsframework_options() {
 						"std" => "5",
 						"type" => "text");
 */						
-	$options[] = array( "name" => "Homepage page template hero-unit background color",
-						"desc" => "Default used if no color is selected.",
+	$options[] = array( "name" => "Homepage page template hero-unit background colour",
+						"desc" => "Default used if no colour is selected.",
 						"id" => "hero_unit_bg_color",
 						"std" => "",
 						"type" => "color");
