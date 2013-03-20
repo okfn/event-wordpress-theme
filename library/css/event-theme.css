@@ -70,7 +70,7 @@ h3 {
 .btn-inverse {
   color: #000;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #363636;
+  background-color: #FFF;
   background-image: -moz-linear-gradient(top, #ffffff, #ffffff);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#ffffff));
   background-image: -webkit-linear-gradient(top, #ffffff, #ffffff);
@@ -129,6 +129,7 @@ header .navbar-static-top .navbar-inner {
   -o-transition: box-shadow 0.5s ease-in-out;
   -ms-transition: box-shadow 0.5s ease-in-out;
   transition: box-shadow 0.5s ease-in-out;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffffffff', GradientType=0);
 }
 body.top header .navbar-fixed-top .navbar-inner,
 header .navbar-static-top .navbar-inner {

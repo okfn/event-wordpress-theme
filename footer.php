@@ -68,6 +68,10 @@
     
     <!-- Image Placeholder -->
     <script src="<?php echo get_template_directory_uri(); ?>/library/js/holder.js"></script>
+    
+    <!--[if lt IE 10]>
+      <script src="<?php echo get_template_directory_uri(); ?>/library/js/css3-multi-column.js"></script>
+    <![endif]-->
 
 	</body>
 </html>
