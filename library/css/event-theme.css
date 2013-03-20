@@ -12,6 +12,8 @@ h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
   color: #1d1d1d;
+  margin-top: 0;
+  line-height: 120%;
 }
 h2 {
   font-size: 28px;
