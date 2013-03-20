@@ -98,7 +98,7 @@ function optionsframework_options() {
 //						"std" => "",
 //						"type" => "wpbs_typography");
 						
-	$options[] = array( "name" => "Link Color",
+	$options[] = array( "name" => "Accent / Link Color",
 						"desc" => "Default used if no color is selected.",
 						"id" => "link_color",
 						"std" => "",

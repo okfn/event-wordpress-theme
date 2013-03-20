@@ -567,7 +567,10 @@ function get_wpbs_theme_options(){
         $theme_options_styles .= '
         a{ 
           color: ' . $link_color . '; 
-        }';
+        }
+				.highlight.accent {
+					background-color:' . $link_color . ';
+				}';
       }
       
       $link_hover_color = of_get_option('link_hover_color');
