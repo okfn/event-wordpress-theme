@@ -171,11 +171,7 @@ header .navbar .tweets {
   margin-top: 14px;
   float: right;
 }
-.fixed-okf-panel .okfn-ribbon {
-  position: relative;
-  right: -2px;
-  height: 1px;
-}
+/* OKF Panel */
 .fixed-okf-panel .okfn-ribbon a {
   background-position: center -220px;
   height: 80px;
