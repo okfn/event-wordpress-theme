@@ -88,18 +88,6 @@
 	</head>
 	
 	<body <?php body_class(); ?>>
-		<?php if(of_get_option('okf_ribbon', '1')) {?>
-      <div class="fixed-okf-panel visible-desktop">
-        <div id="okf-panel" class="collapse">
-          <iframe src="http://assets.okfn.org/themes/okfn/okf-panel.html" scrolling="no"></iframe>
-        </div>
-        <div class="container">
-          <div class="okfn-ribbon">
-            <a href="http://okfn.org/" data-toggle="collapse" data-target="#okf-panel" title="Part of the Open Knowledge Foundation Network">An Open Knowledge Foundation Site</a>
-          </div>
-        </div>
-      </div>
-		<?php } ?>
     	
 		<header role="banner">
 		

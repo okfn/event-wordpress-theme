@@ -131,12 +131,6 @@ function optionsframework_options() {
 					  "std" => "",
 					  "type" => "text");
 						
-	$options[] = array( "name" => "OKF Ribbon",
-						"desc" => "Link to Open Knowledge Foundation",
-						"id" => "okf_ribbon",
-						"std" => "1",
-						"type" => "checkbox");
-						
 //	$options[] = array( "name" => "Top nav background color",
 //						"desc" => "Default used if no color is selected.",
 //						"id" => "top_nav_bg_color",

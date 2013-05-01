@@ -626,18 +626,6 @@ function get_wpbs_theme_options(){
 					margin-top:0px;
 				}';
       }
-			
-			$okf_ribbon = of_get_option('okf_ribbon');
-      if ($okf_ribbon){
-        $theme_options_styles .= '
-        @media only screen and (min-width: 980px) {
-					.navbar .nav,
-					header .navbar .twitter-ticker,
-					header .navbar .social-links {
-						margin-right:60px;
-					}
-				}';
-      }
       
       //$topbar_bg_color = of_get_option('top_nav_bg_color');
       //if ( $topbar_bg_color ) {
