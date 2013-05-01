@@ -27,10 +27,8 @@
 		<![endif]-->
 		
 		<?php wp_footer(); // js scripts are inserted using this function ?>
-    <?php if(of_get_option('okf_ribbon', '1')) {?>
-    <!-- OKF Ribbon -->
-		<script language="javascript" src="http://assets.okfn.org/themes/okfn/okf-panel.js" type="text/javascript"></script>
-		<?php }
+
+		<?php 
 		if(of_get_option('hashtag_tweets', '1')) {?>
 		<!-- Tweet -->
 		<script language="javascript" src="<?php echo get_template_directory_uri(); ?>/library/js/jquery.tweet.js" type="text/javascript"></script>
