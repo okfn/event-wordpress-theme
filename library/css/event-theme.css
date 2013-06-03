@@ -434,7 +434,7 @@ a.thumbnail:hover {
 }
 @media (min-width: 980px) {
   body {
-    padding-top: 95px;
+    padding-top: 100px;
   }
   header .navbar .brand {
     margin-left: 0px;
@@ -473,6 +473,9 @@ a.thumbnail:hover {
   body.okf-panel header .navbar .twitter-ticker,
   body.okf-panel header .navbar .social-links {
     margin-right: 60px;
+  }
+  .widget_search input {
+    width: 188px;
   }
 }
 @media (max-width: 979px) {

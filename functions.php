@@ -570,6 +570,27 @@ function get_wpbs_theme_options(){
         }
 				.highlight.accent {
 					background-color:' . $link_color . ';
+				}
+				textarea:focus,
+				input[type="text"]:focus,
+				input[type="password"]:focus,
+				input[type="datetime"]:focus,
+				input[type="datetime-local"]:focus,
+				input[type="date"]:focus,
+				input[type="month"]:focus,
+				input[type="time"]:focus,
+				input[type="week"]:focus,
+				input[type="number"]:focus,
+				input[type="email"]:focus,
+				input[type="url"]:focus,
+				input[type="search"]:focus,
+				input[type="tel"]:focus,
+				input[type="color"]:focus,
+				.uneditable-input:focus {
+					border-color: ' . $link_color . ';
+					-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px ' . $link_color . ';
+					-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px ' . $link_color . ';
+					box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px ' . $link_color . ';
 				}';
       }
       
