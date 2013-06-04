@@ -1,0 +1,48 @@
+/*
+Theme Name: OKEvent
+Theme URI: https://github.com/okfn/event-wordpress
+Description: Theme created for Open Knowledge Foundation events.
+Version: 0.1.2
+Author: Mint Canary
+Author URI: http://www.mintcanary.com/
+Tags: okf
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+@import url('library/css/wpbs.css');
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700italic,700');
+@import url('http://assets.okfn.org/themes/okfn/okf-panel.css');
+
+/* Text Columns */
+@media (min-width: 768px) {
+	[class*="column"] {
+		-moz-column-gap:20px; /* Firefox */
+		-webkit-column-gap:20px; /* Safari and Chrome */
+		column-gap:20px;
+	}
+	.column2 {
+		-moz-column-count:2; /* Firefox */
+		-webkit-column-count:2; /* Safari and Chrome */
+		column-count:2;
+	}
+	.column3 {
+		-moz-column-count:3; /* Firefox */
+		-webkit-column-count:3; /* Safari and Chrome */
+		column-count:3;
+	}
+}
+
+/* Wordpress Work-arounds */
+ul > br,
+div > br,
+section > br,
+p:empty {
+	display:none;
+}
+
+iframe {
+	max-width:100%;
+}
+
+@import url('event-theme.less');
