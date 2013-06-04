@@ -157,6 +157,7 @@ function speakers_shortcode( $atts, $content = null ) {
 		 $output .= ' '.$class.'';
 	 }
 	 $output .= '">' .do_shortcode($content). '</ul>';
+	 $output .= '<script>$("body").addClass("speakers-shortcode");</script>';
 	 
 	 return $output;
 } 

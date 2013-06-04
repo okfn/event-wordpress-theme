@@ -107,9 +107,11 @@ $(document).ready(function() {
 	// add the 'top' class to body
   $("body").addClass("top");
 	
-	$(".speaker .blurb").dotdotdot({
-	// configuration goes here
-	});
+	if ( $("body").hasClass("speakers-shortcode") ) {
+		$(".speaker .blurb").dotdotdot({
+		// configuration goes here
+		});
+	};
 	
 });/* end of as page load scripts */
 
