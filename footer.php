@@ -56,6 +56,14 @@
 		</script>
     <?php } ?>
     
+    <?php if(of_get_option('search_bar', '1')) {?>
+    <script type='text/javascript'>
+		  $("div.navbar-search a").click(function(){
+			  $("div.navbar-search").toggleClass("active");
+			});
+		</script>   
+    <?php } ?>
+    
     <!-- Dot Dot Dot -->
 		<script src="<?php echo get_template_directory_uri(); ?>/library/js/jquery.dotdotdot-1.5.6-packed.js"></script>
     

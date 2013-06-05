@@ -537,8 +537,9 @@ function get_wpbs_theme_options(){
 					overflow: hidden;
 					text-indent: -9999px;
 					width: 220px;
-					height:75px;
-					padding-top:10px;
+					height:110px;
+					padding:0;
+					margin-top:25px;
         }';
       }
 			
