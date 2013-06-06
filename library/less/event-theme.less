@@ -1,7 +1,7 @@
 @black: #1d1d1d;
 
 /* Fonts */
-@sans: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@sans: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 @serif: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 
 body {
@@ -12,7 +12,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: @sans;
-  font-weight: 600;
+  font-weight: 700;
 	color:@black;
 	line-height:120%;
 }
@@ -105,6 +105,14 @@ h3 {
 .btn-inverse.active {
   background-color: #FFF \9;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+}
+
+.label {
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	padding: 5px;
+	font-family:@sans;
 }
 
 #main h1,
@@ -335,6 +343,39 @@ header .navbar .social-links li .hash-link:hover {
 	padding-bottom: 9px;
 }
 
+/* Sidebar */
+.widget.widget_tag_cloud .widgettitle {
+	display:none;
+}
+.widget.widget_tag_cloud .label {
+	padding:7px;
+	margin-right:6px;
+}
+
+.widget.widget_recent_entries .widgettitle {
+	display:none;
+}
+.widget.widget_recent_entries ul {
+	background-image: url(images/latest-posts.jpg);
+	background-position: center top;
+	background-size:cover;
+	margin:0;
+	font-family:@sans;
+}
+.widget.widget_recent_entries ul li {
+	display:block;
+	border-bottom:solid 5px #FFF;
+}
+.widget.widget_recent_entries ul li a {
+	display:block;
+	padding:4px 12px;
+	color:#FFF;
+}
+.widget.widget_recent_entries ul li a:hover {
+	text-decoration:none;
+	background-color:rgba(255,255,255,0.1);
+}
+
 
 .thumbnail,
 a.thumbnail:hover {
@@ -390,7 +431,7 @@ a.thumbnail:hover {
 	color:#FFF;
 	font-family:@sans;
 	text-transform:uppercase;
-	font-weight: 600;
+	font-weight: 700;
 	text-shadow: 1px 1px 0px #000000;
   filter: dropshadow(color=#000000, offx=1, offy=1);
 }
@@ -465,7 +506,7 @@ a.thumbnail:hover {
 	display: block;
 	font-family:@sans;
 	color:@black;
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 13px;
 	padding-left: 18px;
 	margin:5px 0px;
@@ -480,7 +521,7 @@ a.thumbnail:hover {
 
 @media (min-width: 980px) {
 	body{
-		padding-top: 100px;
+		padding-top: 140px;
 	}
 	header .navbar .brand {
 		margin-left:0px;

@@ -1,13 +1,13 @@
 @import url('library/css/wpbs.css');
 
-@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700italic,700');
+@import url('http://fonts.googleapis.com/css?family=Lato:700,400,400italic');
 
 @import url('http://assets.okfn.org/themes/okfn/okf-panel.css');
 /*
 Theme Name: OKEvent
 Theme URI: https://github.com/okfn/event-wordpress
 Description: Theme created for Open Knowledge Foundation events.
-Version: 1.0.0
+Version: 1.1.0
 Author: Mint Canary
 Author URI: http://www.mintcanary.com/
 Tags: okf
@@ -66,8 +66,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 600;
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
   color: #1d1d1d;
   line-height: 120%;
 }
@@ -90,7 +90,7 @@ h3 {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .btn-primary {
   color: #ffffff;
@@ -156,6 +156,13 @@ h3 {
   background-color: #FFF \9;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 }
+.label {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  padding: 5px;
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
 #main h1,
 #main h2 {
   display: inline-block;
@@ -179,7 +186,7 @@ header .navbar-static-top .navbar-inner {
   border-width: 0;
   background-image: none;
   background-color: #FFF;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   -webkit-transition: -webkit-box-shadow 0.5s ease-in-out;
   -moz-transition: box-shadow 0.5s ease-in-out;
   -o-transition: box-shadow 0.5s ease-in-out;
@@ -369,6 +376,37 @@ header .navbar .social-links li .hash-link:hover {
   margin: 20px 0 0 0;
   padding-bottom: 9px;
 }
+/* Sidebar */
+.widget.widget_tag_cloud .widgettitle {
+  display: none;
+}
+.widget.widget_tag_cloud .label {
+  padding: 7px;
+  margin-right: 6px;
+}
+.widget.widget_recent_entries .widgettitle {
+  display: none;
+}
+.widget.widget_recent_entries ul {
+  background-image: url(images/latest-posts.jpg);
+  background-position: center top;
+  background-size: cover;
+  margin: 0;
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.widget.widget_recent_entries ul li {
+  display: block;
+  border-bottom: solid 5px #FFF;
+}
+.widget.widget_recent_entries ul li a {
+  display: block;
+  padding: 4px 12px;
+  color: #FFF;
+}
+.widget.widget_recent_entries ul li a:hover {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.1);
+}
 .thumbnail,
 a.thumbnail:hover {
   border: none;
@@ -388,7 +426,7 @@ a.thumbnail:hover {
   border-top: 4px solid #ededed;
 }
 .table th {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #1d1d1d;
 }
 .table-condensed th,
@@ -416,9 +454,9 @@ a.thumbnail:hover {
 .homepage-tagline {
   background-color: transparent;
   color: #FFF;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   text-shadow: 1px 1px 0px #000000;
   filter: dropshadow(color=#000000, offx=1, offy=1);
 }
@@ -500,9 +538,9 @@ a.thumbnail:hover {
 }
 .schedule .location {
   display: block;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #1d1d1d;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 13px;
   padding-left: 18px;
   margin: 5px 0px;
@@ -515,7 +553,7 @@ a.thumbnail:hover {
 }
 @media (min-width: 980px) {
   body {
-    padding-top: 100px;
+    padding-top: 140px;
   }
   header .navbar .brand {
     margin-left: 0px;
