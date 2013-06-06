@@ -115,20 +115,6 @@ h3 {
 	font-family:@sans;
 }
 
-#main h1,
-#main h2 {
-	display:inline-block;
-}
-#main h1:after,
-#main h2:after {
-	content:' ';
-	background-color:@black;
-	display: block;
-  height: 4px;
-  min-width: 220px;
-	margin-bottom:10px;
-	letter-spacing:-1px;
-}
 #main h6 {
 	text-transform:uppercase;
 	font-size:15px;
@@ -339,8 +325,8 @@ header .navbar .social-links li .hash-link:hover {
 
 .page-header {
 	border-bottom: none;
-	margin: 20px 0 0 0;
-	padding-bottom: 9px;
+	margin-top:0;
+	padding:0;
 }
 
 /* Sidebar */
@@ -350,12 +336,14 @@ header .navbar .social-links li .hash-link:hover {
 .widget.widget_tag_cloud .label {
 	padding:7px;
 	margin-right:6px;
+	line-height:37px;
 }
 
 .widget.widget_recent_entries .widgettitle {
 	display:none;
 }
 .widget.widget_recent_entries ul {
+	background-color:#17505c;
 	background-image: url(images/latest-posts.jpg);
 	background-position: center top;
 	background-size:cover;
@@ -425,6 +413,53 @@ a.thumbnail:hover {
 	z-index:1;
 }
 
+.hero-unit,
+.blog .hero-unit {
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+	position:relative;
+	color:#FFF;
+	font-size:91px;
+	line-height:83px;
+	text-transform:uppercase;
+	padding:25px 35px;
+}
+.hero-unit .inner {
+	position:absolute;
+	bottom:0px;
+	padding:40px 45px;
+}
+.hero-unit h1 {
+	font-size:51px;
+	margin-bottom:9px;
+}
+.hero-unit p {
+	font-family:@sans;
+	font-size:25px;
+	text-transform:none;
+}
+.hero-unit p.meta {
+	font-family:@serif;
+	font-size:16px;
+	line-height:16px;
+	margin:0;
+}
+.hero-unit a {
+	color:#FFF;
+	border-bottom:dotted 1px #FFF;
+}
+.hero-unit a:hover {
+	color:#FFF;
+	text-decoration:none;
+	border-bottom:solid;
+}
+
+.page-template-page-homepage-php .hero-unit {
+  padding: 0px;
+	height:425px;
+}
+
 .carousel-caption,
 .homepage-tagline {
 	background-color:transparent;
@@ -458,6 +493,14 @@ a.thumbnail:hover {
 		font-size:32px;
 		padding:30px;
 	}
+}
+
+
+.post-navigation {
+	margin-top:20px;
+}
+.post-navigation div:nth-of-type(even) {
+	text-align:right;
 }
 
 
@@ -639,16 +682,7 @@ a.thumbnail:hover {
 	}
 }
 
-@media (max-width: 767px) { 
-  #main h1,
-	#main h2,
-	#main h3,
-	#main h4,
-	#main h5,
-	#main h6 {
-		display:block;
-	}
-	
+@media (max-width: 767px) { 	
 	header .navbar .nav {
 		padding-top:10px;
 	}

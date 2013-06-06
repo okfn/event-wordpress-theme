@@ -114,7 +114,19 @@ function optionsframework_options() {
 						"desc" => "Default used if no colour is selected.",
 						"id" => "link_active_color",
 						"std" => "",
+						"type" => "color");	
+											
+	$options[] = array( "name" => "Banner background colour",
+						"desc" => "Default used if no colour is selected.",
+						"id" => "hero_unit_bg_color",
+						"std" => "",
 						"type" => "color");
+						
+	$options[] = array( "name" => "Banner background image",
+						"desc" => "Image URL.",
+						"id" => "banner_image",
+						"std" => "",
+						"type" => "text");
 						
 	$options[] = array( "name" => "Content",
 						"type" => "heading");
@@ -271,12 +283,7 @@ function optionsframework_options() {
 						"class" => "mini hidden",
 						"std" => "5",
 						"type" => "text");
-*/						
-	$options[] = array( "name" => "Homepage page template hero-unit background colour",
-						"desc" => "Default used if no colour is selected.",
-						"id" => "hero_unit_bg_color",
-						"std" => "",
-						"type" => "color");
+*/
 						
 	$options[] = array( "name" => "'Comments are closed' message on pages",
 						"desc" => "Suppress 'Comments are closed' message",

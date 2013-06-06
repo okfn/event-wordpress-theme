@@ -1,5 +1,9 @@
 <?php get_header(); ?>
-			
+			<div class="page-header hero-unit">
+        <h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1>
+        <p class="meta"><?php _e("Posted", "bonestheme"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_date(); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "bonestheme"); ?> <?php the_category(', '); ?>.</p>
+      </div>
+      
 			<div id="content" class="clearfix row">
 			
 				<div id="main" class="span8 clearfix" role="main">
@@ -11,11 +15,7 @@
 						<header>
 						
 							<?php the_post_thumbnail( 'wpbs-featured' ); ?>
-							
-							<div class="page-header"><h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1></div>
-							
-							<p class="meta"><?php _e("Posted", "bonestheme"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_date(); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "bonestheme"); ?> <?php the_category(', '); ?>.</p>
-						
+													
 						</header> <!-- end article header -->
 					
 						<section class="post_content clearfix" itemprop="articleBody">
@@ -29,6 +29,15 @@
 			
 							<?php the_tags('<p class="tags"><span class="tags-title">' . __("Tags","bonestheme") . ':</span> ', ' ', '</p>'); ?>
 							
+              <div class="row post-navigation">
+                <div class="span4">
+                  <?php previous_post_link(); ?>
+                </div>
+                <div class="span4">
+                  <?php next_post_link(); ?>
+                </div>
+              </div>
+              
 							<?php 
 							// only show edit button if user has permission to edit posts
 							if( $user_level > 0 ) { 
@@ -62,7 +71,7 @@
 				</div> <!-- end #main -->
     
 				<?php get_sidebar(); // sidebar 1 ?>
-    
+ 
 			</div> <!-- end #content -->
 
 <?php get_footer(); ?>

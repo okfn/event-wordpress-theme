@@ -142,7 +142,7 @@ function bones_comments($comment, $args, $depth) {
 				<div class="avatar span2">
 					<?php echo get_avatar($comment,$size='75',$default='<path_to_url>' ); ?>
 				</div>
-				<div class="span10 comment-text">
+				<div class="span6 comment-text">
 					<?php printf(__('<h4>%s</h4>','bonestheme'), get_comment_author_link()) ?>
 					<?php edit_comment_link(__('Edit','bonestheme'),'<span class="edit-comment btn btn-small btn-info"><i class="icon-white icon-pencil"></i>','</span>') ?>
                     
@@ -710,13 +710,21 @@ function get_wpbs_theme_options(){
       //  ';
       //}
       
-      //$hero_unit_bg_color = of_get_option('hero_unit_bg_color');
-      //if ($hero_unit_bg_color) {
-      //  $theme_options_styles .= '
-      //  .hero-unit { 
-      //    background-color: '. $hero_unit_bg_color . ';
-      //  }';
-      //}
+      $hero_unit_bg_color = of_get_option('hero_unit_bg_color');
+      if ($hero_unit_bg_color) {
+        $theme_options_styles .= '
+        .hero-unit { 
+          background-color: '. $hero_unit_bg_color . ';
+        }';
+      }
+			
+			$banner_image = of_get_option('banner_image');
+      if ($banner_image) {
+        $theme_options_styles .= '
+        .hero-unit { 
+				  background-image: url('. $banner_image . ');
+        }';
+      }
       
       $suppress_comments_message = of_get_option('suppress_comments_message');
       if ($suppress_comments_message){

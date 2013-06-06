@@ -4,7 +4,7 @@
 			
 				<div id="main" class="span8 clearfix" role="main">
 				
-					<div class="page-header">
+					<div class="page-header hero-unit">
 					<?php if (is_category()) { ?>
 						<h1 class="archive_title h2">
 							<span><?php _e("Posts Categorized:", "bonestheme"); ?></span> <?php single_cat_title(); ?>

@@ -3,23 +3,18 @@
 			<?php
 				$blog_hero = of_get_option('blog_hero');
 				if ($blog_hero){
-			?>
-			<div class="clearfix row">
-				<div class="hero-unit">
-				
-					<h1><?php bloginfo('title'); ?></h1>
-					
-					<p><?php bloginfo('description'); ?></p>
-				
-				</div>
-			</div>
+			?>      
+			<div class="page-header hero-unit">
+        <h1><?php wp_title('') ?></h1>
+      </div>	
 			<?php
 				}
 			?>
 			
 			<div id="content" class="clearfix row">
-			
+		
 				<div id="main" class="span8 clearfix" role="main">
+
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
@@ -29,7 +24,7 @@
 						
 							<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'wpbs-featured' ); ?></a>
 							
-							<div class="page-header"><h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1></div>
+							<div class="page-header"><h2 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2></div>
 							
 							<p class="meta"><?php _e("Posted", "bonestheme"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_date(); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "bonestheme"); ?> <?php the_category(', '); ?>.</p>
 						
