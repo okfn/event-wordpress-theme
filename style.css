@@ -567,7 +567,7 @@ a.thumbnail:hover {
   }
   .navbar .nav > li > a {
     padding: 0px 0px 5px 0px;
-    margin-left: 20px;
+    margin-left: 16px;
     font-size: 16px;
     color: #1d1d1d;
   }
@@ -587,7 +587,7 @@ a.thumbnail:hover {
     display: block;
   }
   .navbar-search {
-    margin: -3px 0 0 10px;
+    margin: -3px -7px 0 7px;
   }
   .navbar-search a {
     display: inline-block;
