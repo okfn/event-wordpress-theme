@@ -261,4 +261,24 @@ function session_shortcode( $atts, $content = null ) {
 } 
 add_shortcode( 'session', 'session_shortcode' );
 
+
+// Promo Link
+function promolink_shortcode( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+			'class' => 'holderjs',
+			'link' => '#',
+			'image' => '?holder.js/460x276/text:image&nbsp;coming&nbsp;soon',
+		), $atts ) );
+   
+	 $output = '<a class="promo-link';
+	 if (!empty($class)) {
+		 $output .= ' '.$class.'';
+	 }
+	 $output .= '" href="'.$link.'" style="background-image:url('.$image.');"><span class="ribbon ribbon-large"><span class="inner">' .do_shortcode($content). '</span></span></a>';
+	 
+	 return $output;
+} 
+add_shortcode( 'promolink', 'promolink_shortcode' );
+
+
 ?>
