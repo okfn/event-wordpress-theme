@@ -569,8 +569,13 @@ function get_wpbs_theme_options(){
         a{ 
           color: ' . $link_color . '; 
         }
-				.highlight.accent {
+				.highlight.accent,
+				.ribbon .inner {
 					background-color:' . $link_color . ';
+				}
+				.ribbon .inner:before,
+				.ribbon .inner:after {
+					border-left-color:' . $link_color . ';
 				}
 				textarea:focus,
 				input[type="text"]:focus,

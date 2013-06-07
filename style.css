@@ -530,6 +530,64 @@ a.thumbnail:hover {
     padding: 30px;
   }
 }
+.blog-latest .post {
+  height: 276px;
+  display: block;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+.blog-latest .post .text {
+  display: block;
+  position: absolute;
+  width: 400px;
+  margin: 20px;
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 10px;
+  font-size: 18px;
+  bottom: 0;
+}
+.blog-latest .post .ribbon {
+  margin-top: 25px;
+}
+.ribbon {
+  display: inline-block;
+  margin-left: -2px;
+  padding: 2px 8px 2px 1px;
+  background-image: url(images/ribbon-shadow.png);
+  background-position: right center;
+}
+.ribbon .inner {
+  display: inline-block;
+  background: #1d1d1d;
+  color: #FFF;
+  position: relative;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 15px 0 20px;
+  font-size: 18px;
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+.ribbon .inner:before,
+.ribbon .inner:after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-color: transparent;
+  border-left-color: #1d1d1d;
+}
+.ribbon .inner:before {
+  border-width: 0px 0 18px 6px;
+  top: 0;
+}
+.ribbon .inner:after {
+  border-width: 18px 0 0px 6px;
+  bottom: 0;
+}
 .post-navigation {
   margin-top: 20px;
 }

@@ -192,6 +192,12 @@ function optionsframework_options() {
 						"std" => "",
 						"type" => "checkbox");
 						
+  $options[] = array( "name" => "Homepage Posts",
+						"desc" => "Show latest blog posts on homepage",
+						"id" => "home_blog",
+						"std" => "1",
+						"type" => "checkbox");
+						
 //	$options[] = array( "name" => "Theme",
 //						"type" => "heading");
 //						

@@ -133,8 +133,52 @@ Template Name: Homepage
 													
 						</section> <!-- end article header -->
 						
+						<?php if(of_get_option('home_blog', '1')) {?>
+              <section class="blog-latest">
+      				  <div class="row">
+									<?php
+                  $poststoshow = 'numberposts=2';
+									if (get_the_title( get_option('page_for_posts', true) )) {
+                	  $ribbontext = get_the_title( get_option('page_for_posts', true) );
+									} else {
+										$ribbontext = 'blog-test';
+									}
+									
+                  $postslist = get_posts($poststoshow);
+                  foreach ($postslist as $post) :
+                    setup_postdata($post);
+                  ?>
+                   
+                  <?php 
+                  if (wp_get_attachment_url( get_post_thumbnail_id($post->ID) )) {
+                    $imgurl = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                  }
+                  else {
+                    $imgurl = '?holder.js/460x276/text:image&nbsp;coming&nbsp;soon';
+                  }
+                  ?>
+                  
+                    <div class="span6">
+                      <a class="post holderjs" href="<?php the_permalink(); ?>" style="background-image:url(<?php echo $imgurl ?>)">
+                        <span class="text highlight accent">
+													<?php the_title(); ?>
+                          <?php //the_excerpt() ?>
+                        </span>
+                        <span class="ribbon">
+                          <span class="inner">
+                            <?php echo $ribbontext; ?>
+                          </span>
+                        </span>
+                      </a>
+                    </div>
+                  
+                  <?php endforeach ?>
+                </div>
+          	 </section>
+            <?php } ?>
+          
 						<footer>
-							<p class="clearfix"><?php the_tags('<span class="tags">' . __("Tags","bonestheme") . ': ', ', ', '</span>'); ?></p>
+							<p class="clearfix"><?php //the_tags('<span class="tags">' . __("Tags","bonestheme") . ': ', ', ', '</span>'); ?></p>
 							<?php if(of_get_option('site_sharing', '1') && of_get_option('home_sharing')) {?>
               <ul class="socialcount" data-url="<?php echo get_permalink( $post->ID ); ?>">
                 <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink( $post->ID ); ?>" title="Share on Facebook"><span class="icon icon-facebook"></span><span class="count">Like</span></a></li>
@@ -145,6 +189,7 @@ Template Name: Homepage
 						</footer> <!-- end article footer -->
 					
 					</article> <!-- end article -->
+          
           
 					<?php 
 						// No comments on homepage
