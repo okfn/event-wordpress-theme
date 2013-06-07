@@ -170,6 +170,9 @@ function speaker_shortcode( $atts, $content = null ) {
 			'name' => '',
 			'featured' => '',
 			'link' => '',
+			'web' => '',
+			'twitter' => '',
+			'location' => '',
 		), $atts ) );
 		
 		$output = '<li class="speaker span';
@@ -195,6 +198,17 @@ function speaker_shortcode( $atts, $content = null ) {
 		}
 		if($featured == 'y') {
 			$output .= '<div class="blurb">'.$content.'</div>';
+			$output .= '<ul class="links">';
+			if (!empty($web)) {
+				$output .= '<li class="web"><a href="'.$web.'">Website</a></li>';
+			}
+			if (!empty($twitter)) {
+				$output .= '<li class="twitter"><a href="'.$twitter.'">Twitter</a></li>';
+			}
+			if (!empty($location)) {
+				$output .= '<li class="location"><a href="'.$link.'">'.$location.'</a></li>';
+			}
+			$output .= '</ul>';
 		}
 		$output .= '</li>';
 		

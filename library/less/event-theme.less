@@ -520,6 +520,46 @@ a.thumbnail:hover {
 	height:140px;
 	overflow:hidden;
 }
+.speakers .links {
+	margin:10px 0 0 0;
+}
+.speakers .links li {
+	display:block;
+	float:left;
+	font-family:@sans;
+	line-height:16px;
+	font-size:13px;
+}
+.speakers .links li a {
+	font-weight:bold;
+	color:@black;
+}
+.speakers .links li a:hover {
+	text-decoration:none;
+}
+.speakers .links li.web a,
+.speakers .links li.twitter a {
+	width: 19px;
+	height: 16px;
+	display: block;
+	overflow: hidden;
+	text-indent: -999px;
+	margin-right: 5px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.speakers .links li.web a {
+	background-image: url(images/w.png);
+}
+.speakers .links li.twitter a {
+	background-image: url(images/twitter.png);
+}
+.speakers .links li.location a {
+	padding-left: 18px;
+	background-image: url(images/marker.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
 
 
 /* Schedule Shortcode */
@@ -553,7 +593,7 @@ a.thumbnail:hover {
 	font-size: 13px;
 	padding-left: 18px;
 	margin:5px 0px;
-	background-image: url(../images/icons/marker.png);
+	background-image: url(images/marker.png);
 	background-repeat: no-repeat;
 	background-position: left center;
 }
