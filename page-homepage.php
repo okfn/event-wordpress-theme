@@ -117,6 +117,16 @@ Template Name: Homepage
 
 				    <?php } // ends the if use carousel statement */ ?>
 
+					
+                  <?php if(of_get_option('hashtag_tweets', '1')) {?>
+                    <div class="twitter-ticker">
+                    <?php if(of_get_option('site_hashtag')) {?>
+                      <a href="https://twitter.com/#!/search/%23<?php echo of_get_option('site_hashtag') ?>" class="hash-link">#<?php echo of_get_option('site_hashtag') ?></a>
+                      <div id="ticker"></div>
+                    <?php } ?>
+                    </div>
+                  <?php } ?>
+
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">

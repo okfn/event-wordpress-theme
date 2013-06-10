@@ -242,13 +242,13 @@ function optionsframework_options() {
 					  "type" => "text");
 						
 	$options[] = array( "name" => "Tweets",
-						"desc" => "Show tweets conatining hashtag",
+						"desc" => "Show tweets conatining hashtag, on homepage",
 						"id" => "hashtag_tweets",
 						"std" => "1",
 						"type" => "checkbox");
 						
 	$options[] = array( "name" => "Social Links",
-						"desc" => "Show links to social profiles (replaces tweets)",
+						"desc" => "Show links to social profiles",
 						"id" => "social_links",
 						"std" => "0",
 						"type" => "checkbox");

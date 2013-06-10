@@ -113,14 +113,6 @@
                   </ul>
                   <?php } ?>
                   
-                  <?php if(of_get_option('hashtag_tweets', '1') && !of_get_option('social_links', '1')) {?>
-                    <div class="twitter-ticker visible-desktop">
-                    <?php if(of_get_option('site_hashtag')) {?>
-                      <a href="https://twitter.com/#!/search/%23<?php echo of_get_option('site_hashtag') ?>" class="hash-link">#<?php echo of_get_option('site_hashtag') ?></a>
-                      <div id="ticker"></div>
-                    <?php } ?>
-                    </div>
-                  <?php } ?>
                   
                   <?php if(of_get_option('social_links', '1')) {
                     $twitterUsername = of_get_option('social_link_twitter');
