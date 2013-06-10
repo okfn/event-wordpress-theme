@@ -12,11 +12,14 @@
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 						
+            <!--
 						<header>
 						
 							<?php the_post_thumbnail( 'wpbs-featured' ); ?>
 													
-						</header> <!-- end article header -->
+						</header>
+            -->
+            <!-- end article header -->
 					
 						<section class="post_content clearfix" itemprop="articleBody">
 							<?php the_content(); ?>
