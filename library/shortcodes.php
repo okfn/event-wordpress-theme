@@ -281,4 +281,24 @@ function promolink_shortcode( $atts, $content = null ) {
 add_shortcode( 'promolink', 'promolink_shortcode' );
 
 
+// Featured Image
+function featured_image_shortcode( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+			'class' => '',
+			'width' => '300',
+			'height' => '185',
+		), $atts ) );
+		if ( has_post_thumbnail() ) {
+			$imageurl = event_featured_img_url();
+		} else {
+			$imageurl = '?holder.js/'.$width.'x'.$height.'/text:image&nbsp;coming&nbsp;soon';
+		}
+   
+	 $output = '<div class="featured '.$class.'"><div class="image holderjs" style="background-image:url('.$imageurl.'); height:'.$height.'px;"></div>
+	 <span class="wp-caption">'.event_featured_img_caption().'</span></div>';
+	 
+	 return $output;
+} 
+add_shortcode( 'featured_image', 'featured_image_shortcode' );
+
 ?>

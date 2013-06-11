@@ -27,6 +27,11 @@ __________
 ###Promo Link::
 
 	[promolink image="image.jpg" link="#"]Lorem Ipsum[/promolink]
+	
+
+###Featured Image::
+
+	[featured_image]
 
 
 ###Blockquotes::

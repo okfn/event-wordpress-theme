@@ -7,7 +7,7 @@
 Theme Name: OKEvent
 Theme URI: https://github.com/okfn/event-wordpress
 Description: Theme created for Open Knowledge Foundation events.
-Version: 1.4.1
+Version: 1.4.2
 Author: Mint Canary
 Author URI: http://www.mintcanary.com/
 Tags: okf
@@ -723,6 +723,15 @@ a.thumbnail:hover {
   background-image: url(images/marker.png);
   background-repeat: no-repeat;
   background-position: left center;
+}
+/* Featured Image Shortcode */
+div.featured .image {
+  background-position: center center;
+  background-size: cover;
+}
+.wp-caption {
+  font-size: 12px;
+  opacity: 0.8;
 }
 .padding-bottom {
   padding-bottom: 15px;

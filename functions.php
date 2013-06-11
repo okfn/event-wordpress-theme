@@ -769,5 +769,25 @@ function get_wpbs_theme_options(){
 } // end get_wpbs_theme_options function
 
 
+/************* EVENT THEME *************/
+
+// get featured image url function
+	function event_featured_img_url( $event_featured_img_size ) {
+		$event_image_id = get_post_thumbnail_id();
+		$event_image_url = wp_get_attachment_image_src( $event_image_id, $event_featured_img_size );
+		$event_image_url = $event_image_url[0];
+		return $event_image_url;
+	}
+
+// get featured image caption
+	function event_featured_img_caption() {
+		global $post;
+		$event_thumbnail_id = get_post_thumbnail_id($post->ID);
+		$event_thumbnail_image = get_posts(array('p' => $event_thumbnail_id, 'post_type' => 'attachment', 'post_status' => 'any'));
+		if ($event_thumbnail_image && isset($event_thumbnail_image[0])) {
+			return $event_thumbnail_image[0]->post_excerpt;
+		}
+	}
+
 
 ?>
