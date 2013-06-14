@@ -775,9 +775,9 @@ div.featured .image > div > * {
   right: 5px;
   padding: 0 5px;
   background-color: #000000;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.3);
   color: #cccccc;
-  color: rgba(204, 204, 204, 0.5);
+  color: rgba(204, 204, 204, 0.9);
 }
 @media (min-width: 980px) {
   body {
