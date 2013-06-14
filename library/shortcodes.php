@@ -294,8 +294,11 @@ function featured_image_shortcode( $atts, $content = null ) {
 			$imageurl = '?holder.js/'.$width.'x'.$height.'/text:image&nbsp;coming&nbsp;soon';
 		}
    
-	 $output = '<div class="featured '.$class.'"><div class="image holderjs" style="background-image:url('.$imageurl.'); height:'.$height.'px;"></div>
-	 <span class="wp-caption">'.event_featured_img_caption().'</span></div>';
+	 $output = '<div class="featured '.$class.'"><div class="image holderjs" style="background-image:url('.$imageurl.'); height:'.$height.'px;">';
+	 if (!empty($content)) {
+			$output .= '<div class="highlight accent">'. $content .'</div>';
+	 }
+	 $output .= '</div><span class="wp-caption">'.event_featured_img_caption().'</span></div>';
 	 
 	 return $output;
 } 

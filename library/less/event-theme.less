@@ -26,11 +26,19 @@ h3 {
 
 .highlight {
 	background-color:#000;
-	color:#FFF;
 	text-shadow:none;
 }
 .highlight.accent {
 	background-color:#0088CC;
+}
+.highlight,
+.highlight h1,
+.highlight h2,
+.highlight h3,
+.highlight h4,
+.highlight h5,
+.highlight h6 {
+	color:#FFF;
 }
 
 
@@ -289,6 +297,9 @@ header .navbar .social-links li .hash-link:hover {
 }
 
 /* Sidebar */
+.widget {
+  margin-bottom: 20px;
+}
 .widget.widget_tag_cloud .widgettitle {
 	display:none;
 }
@@ -703,11 +714,25 @@ a.thumbnail:hover {
 
 
 /* Featured Image Shortcode */
+div.featured {
+	position:relative;
+}
 div.featured .image {
 	background-position:center center;
 	background-size:cover;
+	position:relative;
 }
-
+div.featured .image > div {
+	position:absolute;
+	right:0;
+	bottom:0;
+	left:0;
+	padding:10px 15px;
+	margin:20px;
+}
+div.featured .image > div > * {
+	margin:0;
+}
 
 .wp-caption {
 	font-size:12px;
@@ -717,6 +742,26 @@ div.featured .image {
 
 .padding-bottom {
 	padding-bottom:15px;
+}
+
+
+/* Image Left Template */
+.page-template-page-image-left-php header .featured {
+	margin-bottom:20px;
+}
+.page-template-page-image-left-php header .featured > div h1 {
+	text-transform:uppercase;
+	font-size:30px;
+}
+.page-template-page-image-left-php header .featured .wp-caption {
+	position:absolute;
+	top:5px;
+	right:5px;
+	padding:0 5px;
+	background-color:rgb(0,0,0);
+	background-color:rgba(0,0,0,0.1);
+	color: rgb(204,204,204);
+	color: rgba(204,204,204,0.5);
 }
 
 
