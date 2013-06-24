@@ -7,7 +7,7 @@
 Theme Name: OKEvent
 Theme URI: https://github.com/okfn/event-wordpress
 Description: Theme created for Open Knowledge Foundation events.
-Version: 1.5.5
+Version: 1.5.6
 Author: Mint Canary
 Author URI: http://www.mintcanary.com/
 Tags: okf
@@ -163,6 +163,22 @@ h3 {
 .btn-inverse.active {
   background-color: #FFF \9;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+}
+.navbar .btn-navbar {
+  color: #ABABAB;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+.navbar .btn-navbar:hover {
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.navbar .btn-navbar .icon {
+  display: inline-block;
+  display: none;
+}
+.navbar .btn-navbar .icon-bar {
+  -webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 .label {
   -webkit-border-radius: 0px;
@@ -602,12 +618,13 @@ a.thumbnail:hover {
 .blog-latest .post .text {
   display: block;
   position: absolute;
-  width: 400px;
   margin: 20px;
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 10px;
   font-size: 18px;
   bottom: 0;
+  left: 0;
+  right: 0;
 }
 .blog-latest .post .ribbon {
   margin-top: 25px;
@@ -933,10 +950,14 @@ div.featured .image > div > * {
 }
 @media (max-width: 979px) {
   header .navbar .brand {
-    margin-left: 10px;
+    margin-left: 20px;
+    margin-top: 0 !important;
   }
   .okfn-ribbon {
     display: none;
+  }
+  header .navbar .pre-nav {
+    margin-top: 3px;
   }
 }
 @media (max-width: 767px) {
@@ -964,6 +985,12 @@ div.featured .image > div > * {
   }
   header .navbar .social-links {
     display: none;
+  }
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  header .navbar .pre-nav {
+    float: left;
   }
 }
 .footer-links {

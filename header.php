@@ -97,9 +97,12 @@
 								<a class="brand" id="logo" title="<?php bloginfo('name'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?><small><?php echo get_bloginfo('description'); ?></small></a>
 								
 								<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon">
 							        <span class="icon-bar"></span>
 							        <span class="icon-bar"></span>
 							        <span class="icon-bar"></span>
+                    </span>
+										<?php _e('Menu','bonestheme'); ?>
 								</a>
 								
                 <div class="pre-nav">

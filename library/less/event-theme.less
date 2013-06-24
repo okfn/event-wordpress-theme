@@ -115,6 +115,24 @@ h3 {
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 }
 
+.navbar .btn-navbar {
+	color:#ABABAB;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+.navbar .btn-navbar:hover {
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.navbar .btn-navbar .icon {
+	display:inline-block;
+	display:none;
+}
+.navbar .btn-navbar .icon-bar {
+	-webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	-moz-box-shadow:    0 -1px 0 rgba(0, 0, 0, 0.25);
+	box-shadow:         0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+
 .label {
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
@@ -563,12 +581,13 @@ a.thumbnail:hover {
 .blog-latest .post .text {
 	display:block;
 	position:absolute;
-	width:400px;
 	margin:20px;
 	font-family:@sans;
 	padding:10px;
 	font-size:18px;
 	bottom:0;
+	left:0;
+	right:0;
 }
 .blog-latest .post .ribbon {
 	margin-top:25px;
@@ -919,10 +938,14 @@ div.featured .image > div > * {
 
 @media (max-width: 979px) {
 	header .navbar .brand {
-		margin-left: 10px;
+		margin-left: 20px;
+		margin-top:0 !important;
 	}
 	.okfn-ribbon {
 		display:none;
+	}
+	header .navbar .pre-nav {
+		margin-top:3px;
 	}
 }
 
@@ -953,6 +976,13 @@ div.featured .image > div > * {
 	
 	header .navbar .social-links {
 		display:none;
+	}
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	header .navbar .pre-nav {
+		float:left;
 	}
 }
 
