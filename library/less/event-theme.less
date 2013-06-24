@@ -333,6 +333,24 @@ header .navbar .social-links li .hash-link:hover {
 	text-decoration:none;
 	background-color:rgba(255,255,255,0.1);
 }
+/* JM Last Twit */
+.sidebar .widget .tweetfeed {
+	margin:0 0 10px 0;
+}
+.sidebar .widget .tweetfeed li {
+	display:block;
+	border-bottom:dotted 1px #cccccc;
+	padding:10px 0;
+}
+.sidebar .widget .tweetfeed li img {
+	float:left;
+	width:48px;
+	height:48px;
+	padding:3px;
+	margin:0 7px 3px 0;
+	border:solid 1px #cccccc;
+	background-color:#FFF;
+}
 
 
 .thumbnail,
@@ -452,9 +470,32 @@ a.thumbnail:hover {
 	overflow-y: hidden;
 	height:46px;
 	padding:0 15px;
+	font-family:@sans;
+	font-size:18px;
+}
+.page-template-page-homepage-php .twitter-ticker .tweetfeed {
+	margin:0;
+	padding-left:30px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+.page-template-page-homepage-php .twitter-ticker .tweetfeed li {
+	list-style:none;
+	height:46px;
+	color:#FFF;
+}
+.page-template-page-homepage-php .twitter-ticker .tweetfeed li a {
+	color:#FFF;
+	font-weight:bold;
+}
+.page-template-page-homepage-php .twitter-ticker .tweetfeed li .tweetcontent,
+.page-template-page-homepage-php .twitter-ticker .tweetfeed li .tweetcontent a {
+	color:@black;
 }
 .page-template-page-homepage-php .twitter-ticker .hash-link {
-	float:left;
+	position:absolute;
+	z-index:1;
 	background-image: url("images/social-icons.png");
 	background-position: center 4px;
 	background-repeat: no-repeat;

@@ -118,14 +118,15 @@ Template Name: Homepage
 				    <?php } // ends the if use carousel statement */ ?>
 
 					
-                  <?php if(of_get_option('hashtag_tweets', '1')) {?>
-                    <div class="twitter-ticker">
-                    <?php if(of_get_option('site_hashtag')) {?>
-                      <a href="https://twitter.com/#!/search/%23<?php echo of_get_option('site_hashtag') ?>" class="hash-link">#<?php echo of_get_option('site_hashtag') ?></a>
-                      <div id="ticker"></div>
-                    <?php } ?>
-                    </div>
-                  <?php } ?>
+					<?php if(of_get_option('hashtag_tweets', '1') && (is_plugin_active('jm-last-twit-shortcode/jm-ltsc.php'))) {?>
+            <div class="twitter-ticker">
+              <a href="https://twitter.com/#!/search/%23<?php echo of_get_option('site_hashtag') ?>" class="hash-link">#<?php echo of_get_option('site_hashtag') ?></a>
+              <div id="twitterCarousel" class="carousel slide">
+							  <? echo apply_filters("the_content","[jmlt count='20']") ?>
+              </div>
+            </div>
+          <?php } ?>
+                
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
@@ -232,6 +233,12 @@ Template Name: Homepage
 <script>
     $('#homeCarousel').carousel({
     interval: 3000
+    })
+		$(".twitter-ticker #twitterCarousel .tweetfeed").addClass("carousel-inner");
+		$(".twitter-ticker #twitterCarousel .tweetfeed > li").addClass("item");
+		$(".twitter-ticker #twitterCarousel .tweetfeed > li:first-of-type").addClass("active");
+		$('#twitterCarousel').carousel({
+    interval: 6000
     })
 </script>
 <?php get_footer(); ?>

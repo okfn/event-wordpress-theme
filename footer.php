@@ -27,34 +27,6 @@
 		<![endif]-->
 		
 		<?php wp_footer(); // js scripts are inserted using this function ?>
-
-		<?php 
-		if(of_get_option('hashtag_tweets', '1')) {?>
-		<!-- Tweet -->
-		<script language="javascript" src="<?php echo get_template_directory_uri(); ?>/library/js/jquery.tweet.js" type="text/javascript"></script>
-		<script type='text/javascript'>
-		jQuery(function($){
-				$("#ticker").tweet({
-					query: "#<?php echo of_get_option('site_hashtag') ?>",
-					page: 1,
-					avatar_size: 32,
-					count: 20,
-					loading_text: ""
-				}).bind("loaded", function() {
-					var ul = $(this).find(".tweet_list");
-					var ticker = function() {
-						setTimeout(function() {
-							ul.find('li:first').animate( {marginTop: '-4em'}, 500, function() {
-							$(this).detach().appendTo(ul).removeAttr('style');
-							});
-							ticker();
-						}, 6000);
-						};
-						ticker();
-						});
-					}); 
-		</script>
-    <?php } ?>
     
     <?php if(of_get_option('search_bar', '1')) {?>
     <script type='text/javascript'>
