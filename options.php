@@ -242,7 +242,7 @@ function optionsframework_options() {
 					  "type" => "text");
 						
 	$options[] = array( "name" => "Tweets",
-						"desc" => "Show tweets conatining hashtag, on homepage",
+						"desc" => "Show Twitter feed on homepage (requires Last Twit plugin)",
 						"id" => "hashtag_tweets",
 						"std" => "1",
 						"type" => "checkbox");
