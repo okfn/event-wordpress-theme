@@ -387,8 +387,11 @@ a.thumbnail:hover {
 	-webkit-box-shadow: none;
   padding: 0px;
 }
+.thumbnails {
+	margin-bottom:20px;
+}
 .thumbnails > li {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 
@@ -686,11 +689,10 @@ a.thumbnail:hover {
 
 
 /* Speakers Shortcode */
-.speakers {
-	margin-bottom:0;
-}
 .speakers .image {
 	display:block;
+	background-size:cover;
+	background-position:center center;
 }
 .speakers h6 {
 	white-space:nowrap;
@@ -740,6 +742,13 @@ a.thumbnail:hover {
 	background-image: url(images/marker.png);
 	background-repeat: no-repeat;
 	background-position: left center;
+}
+.speaker .image {
+	height:136px;
+	overflow:hidden;
+}
+.speaker.featured .image {
+	height:185px;
 }
 
 
@@ -923,14 +932,6 @@ div.featured .image > div > * {
 		-webkit-border-radius: 0px;
 		-moz-border-radius: 0px;
 		border-radius: 0px;
-	}
-	
-	.speaker .image {
-		height:136px;
-		overflow:hidden;
-	}
-	.speaker.featured .image {
-		height:185px;
 	}
 	
 	body.okf-panel .navbar .pre-nav,

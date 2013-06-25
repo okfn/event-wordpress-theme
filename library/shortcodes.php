@@ -165,8 +165,7 @@ add_shortcode( 'speakers', 'speakers_shortcode' );
 
 function speaker_shortcode( $atts, $content = null ) {  
 	extract( shortcode_atts( array(
-			'image' => '',
-			'holder' => 'image coming soon',
+			'image' => '?holder.js/300x185/text:image&nbsp;coming&nbsp;soon',
 			'name' => '',
 			'featured' => '',
 			'link' => '',
@@ -188,7 +187,7 @@ function speaker_shortcode( $atts, $content = null ) {
 		else {
 			$output .= '<div class="thumbnail">';
 		}
-		$output .= '<span class="image"><img data-src="'.get_template_directory_uri() . '/library/js/holder.js/940x581/auto/text:' .$holder. '" src="' .$image. '" alt="' .$name. '"></span>';
+		$output .= '<span class="image holderjs" style="background-image:url(' .$image. ');"></span>';
 		$output .= '<h6>' .$name. '</h6>';
 		if (!empty($link)) {
 			$output .= '</a>';
@@ -198,7 +197,7 @@ function speaker_shortcode( $atts, $content = null ) {
 		}
 		if($featured == 'y') {
 			$output .= '<div class="blurb">'.$content.'</div>';
-			$output .= '<ul class="links">';
+			$output .= '<ul class="links clearfix">';
 			if (!empty($web)) {
 				$output .= '<li class="web"><a href="'.$web.'">Website</a></li>';
 			}
