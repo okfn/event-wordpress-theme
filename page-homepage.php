@@ -148,7 +148,14 @@ Template Name: Homepage
               <section class="blog-latest">
       				  <div class="row">
 									<?php
-                  $poststoshow = 'numberposts=2';
+									if (of_get_option('home_blog_number')) {
+									  $postnumber = of_get_option('home_blog_number');
+									}
+									else {
+										$postnumber = '4';
+									}
+									$postcolumn = 12 / $postnumber;
+                  $poststoshow = 'numberposts='.$postnumber;
 									if (get_the_title( get_option('page_for_posts', true) )) {
                 	  $ribbontext = get_the_title( get_option('page_for_posts', true) );
 									} else {
@@ -169,7 +176,7 @@ Template Name: Homepage
                   }
                   ?>
                   
-                    <div class="span6">
+                    <div class="span<? echo $postcolumn ?>">
                       <a class="post holderjs" href="<?php the_permalink(); ?>" style="background-image:url(<?php echo $imgurl ?>)">
                         <span class="text highlight accent">
 													<?php the_title(); ?>

@@ -198,6 +198,14 @@ function optionsframework_options() {
 						"std" => "1",
 						"type" => "checkbox");
 						
+	 $options[] = array( "name" => "Number of Posts",
+						"desc" => "How many posts to show on home page.",
+						"id" => "home_blog_number",
+						"std" => "4",
+						"type" => "select",
+						"class" => "mini", //mini, tiny, small
+						"options" => array("2" => "2","3" => "3","4" => "4"));
+						
 //	$options[] = array( "name" => "Theme",
 //						"type" => "heading");
 //						
