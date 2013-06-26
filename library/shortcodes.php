@@ -172,6 +172,7 @@ function speaker_shortcode( $atts, $content = null ) {
 			'web' => '',
 			'twitter' => '',
 			'location' => '',
+			'role' => '',
 		), $atts ) );
 		
 		$output = '<li class="speaker span';
@@ -189,6 +190,9 @@ function speaker_shortcode( $atts, $content = null ) {
 		}
 		$output .= '<span class="image holderjs" style="background-image:url(' .$image. ');"></span>';
 		$output .= '<h6>' .$name. '</h6>';
+		if (!empty($role)) {
+			$output .= '<span class="role">'.$role.'</span>';
+		}
 		if (!empty($link)) {
 			$output .= '</a>';
 		}

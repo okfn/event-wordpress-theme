@@ -172,7 +172,7 @@ Template Name: Homepage
                     $imgurl = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
                   }
                   else {
-                    $imgurl = '?holder.js/460x276/text:image&nbsp;coming&nbsp;soon';
+                    $imgurl = '?holder.js/220x276/text:image&nbsp;coming&nbsp;soon';
                   }
                   ?>
                   
