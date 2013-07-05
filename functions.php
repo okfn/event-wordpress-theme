@@ -565,6 +565,21 @@ function get_wpbs_theme_options(){
       
       $link_color = of_get_option('link_color');
       if ($link_color) {
+				
+				if ( $link_color[0] == '#' ) {
+                $rgb_color = substr( $link_color, 1 );
+        }
+        if ( strlen( $rgb_color ) == 6 ) {
+                list( $r, $g, $b ) = array( $rgb_color[0] . $rgb_color[1], $rgb_color[2] . $rgb_color[3], $rgb_color[4] . $rgb_color[5] );
+        } elseif ( strlen( $rgb_color ) == 3 ) {
+                list( $r, $g, $b ) = array( $rgb_color[0] . $rgb_color[0], $rgb_color[1] . $rgb_color[1], $rgb_color[2] . $rgb_color[2] );
+        } else {
+                return false;
+        }
+        $r = hexdec( $r );
+        $g = hexdec( $g );
+        $b = hexdec( $b );		
+				
         $theme_options_styles .= '
         a{ 
           color: ' . $link_color . '; 
@@ -597,6 +612,16 @@ function get_wpbs_theme_options(){
 					-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px ' . $link_color . ';
 					-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px ' . $link_color . ';
 					box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px ' . $link_color . ';
+				}
+				.nav-pills > li > a {
+					background-color: rgba('.$r.', '.$g.', '.$b.', 0.40);
+				}
+				.nav-pills > li > a:hover {
+					background-color: rgba('.$r.', '.$g.', '.$b.', 0.50);
+				}
+				.nav-pills > .active > a,
+				.nav-pills > .active > a:hover {
+					background-color: ' . $link_color . ';
 				}';
       }
       

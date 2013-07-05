@@ -1,4 +1,5 @@
 @black: #1d1d1d;
+@primary: #0088cc;
 
 /* Fonts */
 @sans: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -130,6 +131,23 @@ h3 {
 	-webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	-moz-box-shadow:    0 -1px 0 rgba(0, 0, 0, 0.25);
 	box-shadow:         0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.nav-pills > li > a {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+	background-color: fade(@primary, 40%);
+	color:#FFF;
+	text-align:center;
+	font-family:@sans;
+}
+.nav-pills > li > a:hover {
+	background-color: fade(@primary, 50%);
+}
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover {
+  background-color: @primary;
 }
 
 
