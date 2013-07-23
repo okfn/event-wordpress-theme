@@ -1,6 +1,14 @@
 @black: #1d1d1d;
 @primary: #0088cc;
 
+@blue: #049cdb;
+@green: #46a546;
+@red: #9d261d;
+@yellow: #ffc40d;
+@orange: #f89406;
+@pink: #c3325f;
+@purple: #7a43b6;
+
 /* Fonts */
 @sans: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 @serif: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
@@ -799,6 +807,9 @@ a.thumbnail:hover {
 	font-size:14px;
 	font-weight:700;
 }
+.schedule .details {
+	display:block;
+}
 .schedule .location {
 	display: block;
 	font-family:@sans;
@@ -806,10 +817,41 @@ a.thumbnail:hover {
 	font-weight: 700;
 	font-size: 13px;
 	padding-left: 18px;
-	margin:5px 0px;
+	margin:5px 10px 5px 0;
 	background-image: url(images/marker.png);
 	background-repeat: no-repeat;
 	background-position: left center;
+	float:left;
+}
+.schedule .colour {
+	display: block;
+	overflow:hidden;
+	width:16px;
+	height:16px;
+	text-indent:20px;
+	margin:5px 10px 5px 0;
+	float:left;
+}
+.schedule .colour.blue {
+	background-color:@blue;
+}
+.schedule .colour.green {
+	background-color:@green;
+}
+.schedule .colour.red {
+	background-color:@red;
+}
+.schedule .colour.yellow {
+	background-color:@yellow;
+}
+.schedule .colour.orange {
+	background-color:@orange;
+}
+.schedule .colour.pink {
+	background-color:@pink;
+}
+.schedule .colour.purple {
+	background-color:@purple;
 }
 
 

@@ -826,6 +826,9 @@ a.thumbnail:hover {
   font-size: 14px;
   font-weight: 700;
 }
+.schedule .details {
+  display: block;
+}
 .schedule .location {
   display: block;
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -833,10 +836,41 @@ a.thumbnail:hover {
   font-weight: 700;
   font-size: 13px;
   padding-left: 18px;
-  margin: 5px 0px;
+  margin: 5px 10px 5px 0;
   background-image: url(images/marker.png);
   background-repeat: no-repeat;
   background-position: left center;
+  float: left;
+}
+.schedule .colour {
+  display: block;
+  overflow: hidden;
+  width: 16px;
+  height: 16px;
+  text-indent: 20px;
+  margin: 5px 10px 5px 0;
+  float: left;
+}
+.schedule .colour.blue {
+  background-color: #049cdb;
+}
+.schedule .colour.green {
+  background-color: #46a546;
+}
+.schedule .colour.red {
+  background-color: #9d261d;
+}
+.schedule .colour.yellow {
+  background-color: #ffc40d;
+}
+.schedule .colour.orange {
+  background-color: #f89406;
+}
+.schedule .colour.pink {
+  background-color: #c3325f;
+}
+.schedule .colour.purple {
+  background-color: #7a43b6;
 }
 /* Featured Image Shortcode */
 div.featured {

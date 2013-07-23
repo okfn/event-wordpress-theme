@@ -252,11 +252,21 @@ function session_shortcode( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 			'title' => '',
 			'location' => '',
+			'colour' => '',
 		), $atts ) );
    
 	 $output = '<td class="slot"><h4 class="title">'.$title.'</h4>' .do_shortcode($content);
+	 if ((!empty($location)) || (!empty($colour))) {
+		 $output .= '<span class="details">';
+	 }
 	 if (!empty($location)) {
 		 $output .= '<span class="location">'.$location.'</span>';
+	 }
+	 if (!empty($colour)) {
+		 $output .= '<span class="colour '.$colour.'">'.$colour.'</span>';
+	 }
+	 if ((!empty($location)) || (!empty($colour))) {
+		 $output .= '</span>';
 	 }
 	 $output .= '</td>';
 	 
