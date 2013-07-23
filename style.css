@@ -1076,6 +1076,15 @@ div.featured .image > div > * {
   border: none;
   padding-left: 0;
 }
+/* Schedule Plugin */
+.ws-schedule {
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.ws-schedule,
+.ws-schedule a,
+.ws-schedule a:hover {
+  color: #1d1d1d;
+}
 /* ======================================== */
 /*! SocialCount - v0.1.5 - 2013-01-22
 * https://github.com/filamentgroup/SocialCount
