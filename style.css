@@ -1079,11 +1079,51 @@ div.featured .image > div > * {
 /* Schedule Plugin */
 .ws-schedule {
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  min-width: 940px;
 }
 .ws-schedule,
 .ws-schedule a,
 .ws-schedule a:hover {
   color: #1d1d1d;
+}
+.ws-schedule th.rowheader {
+  font-size: 10px;
+}
+.ws-schedule td.blue {
+  background-color: rgba(4, 156, 219, 0.55);
+}
+.ws-schedule td.green {
+  background-color: rgba(70, 165, 70, 0.5);
+}
+.ws-schedule td.red {
+  background-color: rgba(157, 38, 29, 0.65);
+}
+.ws-schedule td.yellow {
+  background-color: rgba(255, 196, 13, 0.5);
+}
+.ws-schedule td.orange {
+  background-color: rgba(248, 148, 6, 0.65);
+}
+.ws-schedule td.pink {
+  background-color: rgba(195, 50, 95, 0.65);
+}
+.ws-schedule td.purple {
+  background-color: rgba(122, 67, 182, 0.6);
+}
+.ws-schedule td.navy {
+  background-color: rgba(3, 31, 82, 0.4);
+}
+.ws-schedule td.crimson {
+  background-color: rgba(165, 70, 79, 0.6);
+}
+.ws-schedule td.teal {
+  background-color: rgba(70, 160, 165, 0.65);
+}
+.ws-schedule td.turquoise {
+  background-color: rgba(4, 196, 219, 0.4);
+}
+.ws-schedule td.violet {
+  background-color: rgba(165, 70, 165, 0.45);
 }
 /* ======================================== */
 /*! SocialCount - v0.1.5 - 2013-01-22
