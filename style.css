@@ -858,7 +858,7 @@ a.thumbnail:hover {
   background-color: #46a546;
 }
 .schedule .colour.red {
-  background-color: #9d261d;
+  background-color: #e31200;
 }
 .schedule .colour.yellow {
   background-color: #ffc40d;
@@ -1096,7 +1096,7 @@ div.featured .image > div > * {
   background-color: rgba(70, 165, 70, 0.5);
 }
 .ws-schedule td.red {
-  background-color: rgba(157, 38, 29, 0.65);
+  background-color: rgba(227, 18, 0, 0.7);
 }
 .ws-schedule td.yellow {
   background-color: rgba(255, 196, 13, 0.5);
@@ -1114,7 +1114,7 @@ div.featured .image > div > * {
   background-color: rgba(3, 31, 82, 0.4);
 }
 .ws-schedule td.crimson {
-  background-color: rgba(165, 70, 79, 0.6);
+  background-color: rgba(157, 38, 29, 0.6);
 }
 .ws-schedule td.teal {
   background-color: rgba(70, 160, 165, 0.65);
