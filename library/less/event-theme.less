@@ -420,7 +420,7 @@ a.thumbnail:hover {
   padding: 0px;
 }
 .thumbnails {
-	margin-bottom:20px;
+	margin-bottom:10px;
 }
 .thumbnails > li {
   margin-bottom: 20px;
@@ -721,10 +721,39 @@ a.thumbnail:hover {
 
 
 /* Speakers Shortcode */
+.speakers .speakers-heading {
+	margin-left:20px;
+	margin-top:0;
+	font-size:20px;
+	text-transform:capitalize;
+}
 .speakers .image {
+	display:block;
+	background-color:#f7f7f7;
+}
+.speakers .image span {
 	display:block;
 	background-size:cover;
 	background-position:center center;
+	background-repeat:no-repeat;
+	height:136px;
+	overflow:hidden;
+}
+.speaker.featured .image span {
+	height:185px;
+}
+.speakers .logo .image {
+	padding:20px;
+}
+.speakers .logo .image span {
+	background-size:contain;
+	height:96px;
+}
+.speakers .logo.featured .image {
+	padding:30px;
+}
+.speakers .logo.featured .image span {
+	height:125px;
 }
 .speakers h6 {
 	white-space:nowrap;
@@ -743,6 +772,9 @@ a.thumbnail:hover {
 }
 .speakers .links {
 	margin:10px 0 0 0;
+}
+.speakers .links:empty {
+	display:none;
 }
 .speakers .links li {
 	display:block;
@@ -781,14 +813,6 @@ a.thumbnail:hover {
 	background-repeat: no-repeat;
 	background-position: left center;
 }
-.speaker .image {
-	height:136px;
-	overflow:hidden;
-}
-.speaker.featured .image {
-	height:185px;
-}
-
 
 /* Schedule Shortcode */
 .schedule .schedule-day {

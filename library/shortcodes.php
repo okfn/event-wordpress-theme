@@ -150,13 +150,19 @@ add_shortcode( 'row', 'row_shortcode' );
 function speakers_shortcode( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 			'class' => '',
+			'heading' => '',
 		), $atts ) );
    
 	 $output = '<ul class="speakers thumbnails';
 	 if (!empty($class)) {
 		 $output .= ' '.$class.'';
 	 }
-	 $output .= '">' .do_shortcode($content). '</ul>';
+	 if (!empty($heading)) {
+		 $output .= '"><h3 class="speakers-heading">'.$heading.'</h3>' .do_shortcode($content). '</ul>';
+	 }
+	 else {
+			$output .= '">' .do_shortcode($content). '</ul>';
+		}
 	 $output .= '<script>$("body").addClass("speakers-shortcode");</script>';
 	 
 	 return $output;
@@ -173,22 +179,27 @@ function speaker_shortcode( $atts, $content = null ) {
 			'twitter' => '',
 			'location' => '',
 			'role' => '',
+			'class' => '',
 		), $atts ) );
 		
 		$output = '<li class="speaker span';
 		if($featured == 'y') {
-			$output .= '4 featured">';
+			$output .= '4 featured';
 			}
 			else {
-				$output .= '3">';
+				$output .= '3';
 			}
+		if (!empty($class)) {
+			$output .= ' '.$class;
+		}
+		$output .= '">';
 		if (!empty($link)) {
 			$output .= '<a href="' .$link. '" class="thumbnail">';
 		}
 		else {
 			$output .= '<div class="thumbnail">';
 		}
-		$output .= '<span class="image holderjs" style="background-image:url(' .$image. ');"></span>';
+		$output .= '<span class="image"><span class="holderjs" style="background-image:url(' .$image. ');"></span></span>';
 		$output .= '<h6>' .$name. '</h6>';
 		if (!empty($role)) {
 			$output .= '<span class="role">'.$role.'</span>';
@@ -200,7 +211,9 @@ function speaker_shortcode( $atts, $content = null ) {
 			$output .= '</div>';
 		}
 		if($featured == 'y') {
-			$output .= '<div class="blurb">'.$content.'</div>';
+			if (!empty($content)) {
+				$output .= '<div class="blurb">'.$content.'</div>';
+			}
 			$output .= '<ul class="links clearfix">';
 			if (!empty($web)) {
 				$output .= '<li class="web"><a href="'.$web.'">Website</a></li>';
