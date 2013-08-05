@@ -785,6 +785,11 @@ a.thumbnail:hover {
   height: 140px;
   overflow: hidden;
 }
+.speakers .blurb .more {
+  font-weight: bold;
+  color: #1d1d1d;
+  font-style: italic;
+}
 .speakers .links {
   margin: 0;
 }

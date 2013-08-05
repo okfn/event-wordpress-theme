@@ -212,7 +212,13 @@ function speaker_shortcode( $atts, $content = null ) {
 		}
 		if($featured == 'y') {
 			if (!empty($content)) {
-				$output .= '<div class="blurb">'.$content.'</div>';
+				$output .= '<div class="blurb">'.$content.'';
+			}
+			if ( (!empty($link)) && (!empty($content)) ) {
+				$output .= '<a href="' .$link. '" class="more">'.__('more','bonestheme').'</a>';
+			}
+			if (!empty($content)) {
+				$output .= '</div>';
 			}
 			$output .= '<ul class="links clearfix">';
 			if (!empty($web)) {

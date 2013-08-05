@@ -110,6 +110,7 @@ $(document).ready(function() {
 	if ( $("body").hasClass("speakers-shortcode") ) {
 		$(".speaker .blurb").dotdotdot({
 		// configuration goes here
+		after: "a.more",
 		});
 	};
 	
