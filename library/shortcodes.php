@@ -215,7 +215,7 @@ function speaker_shortcode( $atts, $content = null ) {
 				$output .= '<div class="blurb">'.$content.'';
 			}
 			if ( (!empty($link)) && (!empty($content)) ) {
-				$output .= '<a href="' .$link. '" class="more">'.__('more','bonestheme').'</a>';
+				$output .= '<a href="' .$link. '" class="more">'.__('read on','bonestheme').'</a>';
 			}
 			if (!empty($content)) {
 				$output .= '</div>';
