@@ -552,15 +552,21 @@ a.thumbnail:hover {
 .page-template-page-homepage-php .twitter-ticker .tweetfeed li {
   list-style: none;
   height: 46px;
-  color: #FFF;
+  color: #1d1d1d;
 }
 .page-template-page-homepage-php .twitter-ticker .tweetfeed li a {
-  color: #FFF;
   font-weight: bold;
-}
-.page-template-page-homepage-php .twitter-ticker .tweetfeed li .tweetcontent,
-.page-template-page-homepage-php .twitter-ticker .tweetfeed li .tweetcontent a {
   color: #1d1d1d;
+}
+.page-template-page-homepage-php .twitter-ticker .tweetfeed li .tweet-twittar,
+.page-template-page-homepage-php .twitter-ticker .tweetfeed li .tweet-name,
+.page-template-page-homepage-php .twitter-ticker .tweetfeed li .tweet-screen-name,
+.page-template-page-homepage-php .twitter-ticker .tweetfeed li .intent-meta {
+  display: none;
+}
+.page-template-page-homepage-php .twitter-ticker .tweetfeed li .tweet-content {
+  margin: 0;
+  line-height: 22px;
 }
 .page-template-page-homepage-php .twitter-ticker .hash-link {
   position: absolute;
