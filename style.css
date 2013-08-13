@@ -407,7 +407,18 @@ header .navbar .social-links li .hash-link:hover {
   border-bottom: dotted 1px #cccccc;
   padding: 10px 0;
 }
-.sidebar .widget .tweetfeed li img {
+.sidebar .widget .tweetfeed li .tweet-name a {
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #5E5E5E;
+  font-weight: bold;
+}
+.sidebar .widget .tweetfeed li .tweet-name:after {
+  content: ' ';
+}
+.sidebar .widget .tweetfeed li .tweet-screen-name a {
+  color: #5E5E5E;
+}
+.sidebar .widget .tweetfeed li .tweet-twittar {
   float: left;
   width: 48px;
   height: 48px;
@@ -416,11 +427,23 @@ header .navbar .social-links li .hash-link:hover {
   border: solid 1px #cccccc;
   background-color: #FFF;
 }
-.sidebar .widget .tweetfeed li .tweetcontent {
+.sidebar .widget .tweetfeed li .tweet-content {
+  display: block;
+  min-height: 36px;
+  margin: 0;
+}
+.sidebar .widget .tweetfeed li .intent-meta {
   display: block;
 }
-.sidebar .widget .tweetfeed li img + .tweetcontent {
-  min-height: 36px;
+.sidebar .widget .tweetfeed li .intent-meta a {
+  font-size: 12px;
+  display: inline-block;
+  background-color: #cccccc;
+  color: #FFF;
+  padding: 0 4px;
+}
+.sidebar .widget .tweetfeed li .intent-meta a:hover {
+  background-color: #AFAFAF;
 }
 .thumbnail,
 a.thumbnail:hover {
